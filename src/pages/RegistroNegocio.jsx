@@ -6,14 +6,13 @@ import { useForm } from 'react-hook-form';
 
 const RegistroNegocio = () => {
     const {register, formState:{errors}, handleSubmit} = useForm();
-
-
+   
+    //Aqui se tiene toda la informacion del formulario en data
+    //Desde aqui no entiendo bien como puedo hacer el post
     const onSubmit = async (data) => {
         console.log(data);
         console.log(data.nombre);
-
-
-        
+    
     }
 
     return <div className='contact'>
