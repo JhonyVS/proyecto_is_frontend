@@ -1,6 +1,7 @@
 import React from 'react'
 import imgLeft from '../assets/regneg_left.png'
 import { useForm } from 'react-hook-form';
+import '../styles/RegistroPromo.css'
 
 function RegistroPromo() {
     const {register, formState:{errors}, handleSubmit} = useForm();
@@ -23,7 +24,7 @@ function RegistroPromo() {
         <div className='rightSide'>
         <h2 className='form'>Registrar Promocion</h2>
         <form id="stripe-login"  onSubmit={handleSubmit(onSubmit)}>
-            <div className="formInput">
+            <div className="input-block">
                 <label >Nombre del Producto*</label>
                 <input type="text" {...register('producto_nombre',{
                     required: true,
@@ -39,7 +40,7 @@ function RegistroPromo() {
             </div>
 
 
-            <div className="formInput">
+            <div className="input-block">
                 <label >Precio original en Bs.*</label>
                 <input type="number" {...register('precio_original',{
                     required: true,
@@ -51,7 +52,7 @@ function RegistroPromo() {
                 {errors.precio_original?.type === 'maxLength' && <p>El campo "Precio original" no admite montos superiores a 9999 Bs.</p>}
             </div>
 
-            <div className="formInput">
+            <div className="input-block">
                 <label >Precio con descuento en Bs.*</label>
                 <input type="number" {...register('precio_descuento',{
                     required: true,
@@ -63,7 +64,7 @@ function RegistroPromo() {
                 {errors.precio_descuento?.type === 'maxLength' && <p>El campo "Precio con descuento" no admite montos superiores a 9999 Bs.</p>}
             </div>
 
-            <div class="field padding-bottom--24">
+            <div className="input-block">
                 <label >Descripción*</label>
                 <input type="text"  {...register('producto_descripcion', {
                     required: true,
@@ -78,7 +79,7 @@ function RegistroPromo() {
             </div>
 
 
-            <div class="field padding-bottom--24">
+            <div className="input-block">
                 <label >Ubicación*</label>
                 <input type="text" {...register('promocion_ubicacion', {
                     required: true,
@@ -93,7 +94,7 @@ function RegistroPromo() {
             </div>                
 
 
-            <div class="field padding-bottom--24">
+            <div className="input-block">
                 <label >Categoría*</label>
                 <select {...register('categoria')}>
                     <option value='comida rapida'>Comida Rapida</option>
@@ -105,7 +106,7 @@ function RegistroPromo() {
             </div>
 
 
-            <div class="field padding-bottom--24">    
+            <div className="input-block">    
                 <label >Fecha de inicio de la promoción*</label>
                 <input type="date" {...register('promocion_fecha_inicio',{
                     required: true
@@ -113,7 +114,7 @@ function RegistroPromo() {
                 {errors.promocion_fecha_inicio?.type === 'required' && <p>El campo "Fecha de Inicio" es requerido</p>}                
             </div>
 
-            <div class="field padding-bottom--24">    
+            <div className="input-block">    
                 <label >Fecha final de la promoción*</label>
                 <input type="date" {...register('promocion_fecha_fin',{
                     required: true
@@ -121,7 +122,7 @@ function RegistroPromo() {
                 {errors.promocion_fecha_fin?.type === 'required' && <p>El campo "Fecha Fin" es requerido</p>}                
             </div>
 
-            <div class="field padding-bottom--24">    
+            <div className="input-block">    
                 <label >Hora de Inicio*</label>
                 <input type="time" {...register('promocion_hora_inicio',{
                     required: true
@@ -130,14 +131,14 @@ function RegistroPromo() {
             
             
             </div>
-            <div class="field padding-bottom--24">
+            <div className="input-block">
                 <label >Hora Fin*</label>
                 <input type="time" {...register('promocion_hora_fin',{
                     required:true
                 })}/>
                 {errors.promocion_hora_fin?.type === 'required' && <p>El campo "Hora Fin" es requerido</p>}
             </div>
-            <button type="submit" >
+            <button className="input-button" type="submit" >
                 Enviar
             </button>
 

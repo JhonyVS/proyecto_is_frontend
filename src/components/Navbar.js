@@ -20,13 +20,15 @@ function Navbar() {
             <div className="hiddenLinks">
             <Link to="/">Home</Link>
             <Link to="/registrarPromocion">Registrar Negocio</Link>
-            <Link to="/registrarProducto">Registrar Promocion</Link>                 
+            <Link to="/registrarProducto">Registrar Promocion</Link>
+            <Link to="/registrarNeg">Registrar Neg</Link>                 
             </div>
         </div>
         <div className="rightSide">
             <Link to="/">Home</Link>
             <Link to="/registrarNegocio">Registrar Negocio</Link>
             <Link to="/registrarPromocion">Registrar Promocion</Link>
+            <Link to="/registrarNeg">Registrar Neg</Link>
             <button onClick={toogleNavbar}>
                 <ReorderIcon/>
             </button>

@@ -108,7 +108,7 @@ const RegistroNegocio = () => {
                 })}/>
                 {errors.horario_cierre?.type === 'required' && <p>El campo "Hora Cierre" es requerido</p>}
             </div>
-            <button type="submit" >
+            <button className="input-button" type="submit" >
                 Enviar
 {/* <input type="submit" value="Enviar"/> */}
             </button>
