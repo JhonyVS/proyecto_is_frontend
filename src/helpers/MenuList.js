@@ -42,4 +42,40 @@ export const MenuList = [
         precio: 80,
         precioDescuento: 40,
     },
+    {
+        name: "Alitas Mostaza 6pzas.",
+        image: AlitasMostaza,
+        precio: 50,
+        precioDescuento: 25,
+    },
+    {
+        name: "Alitas Barbacoa 6pzas.",
+        image: AlitasBarbacoa,
+        precio: 50,
+        precioDescuento: 25,
+    },
+    {
+        name: " Berries",
+        image: BerriesBebida,
+        precio: 30,
+        precioDescuento: 15,
+    },
+    {
+        name: "Hamburguesa de Pollo",
+        image: HamburguesaPollo,
+        precio: 48,
+        precioDescuento: 24,
+    },
+    {
+        name: "Hamburguesa de Carne",
+        image: HamburguesaCarne,
+        precio: 48,
+        precioDescuento: 24,
+    },
+    {
+        name: "Costillas a la Barbacoa",
+        image: CostillasBarbacoa,
+        precio: 80,
+        precioDescuento: 40,
+    },
 ]

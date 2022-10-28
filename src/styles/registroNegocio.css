@@ -1,8 +1,8 @@
 
-.contact {
+  .contact {
 
     width: 100%;
-    height: 90vh;
+    height: 79vh;
     display: flex;
   }
   
@@ -22,6 +22,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: #e5e5e5;
   }
   
   .contact .rightSide h1 {
@@ -32,54 +33,117 @@
     margin-left: 30px;
   }
   
-  form {
-    margin: 5rem auto 0;
-    width: 24rem;
-  
-    .count {
-      padding: 0.25rem 0;
-      text-align: center;
-      color: #fff;
-      background: #333;
-      border-radius: 4px;
-    }
-  
-    div,
-    select {
-      margin-bottom: 1.5rem;
-      width: inherit;
-    }
-  
-    input,
-    select {
-      padding: 0 0.5rem;
-      width: inherit;
-      height: 2rem;
-      border-radius: 4px;
-      border: none;
-      box-sizing: border-box;
-    }
-  
-    input[type="submit"] {
-      height: 2.5rem;
-      font-size: 1rem;
-      color: #fff;
-      background: #0971f1;
-      cursor: pointer;
-    }
-}
+  .form {
+    
+    width: 10px;
+  }
+
+  /* ----- -----  Este ----- ----- */
+  div, select{
+    margin-bottom: 25px;
+    width: inherit;
+  }
+
+  input,
+  select {
+    padding: 10px;
+    width: inherit;
+    height: 2rem;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .form .input[type="submit"] {
+    height: 2.5rem;
+    font-size: 1rem;
+    color: black;
+    background: #0971f1;
+    cursor: pointer;
+  }
 
   h2{
     color:black;
     text-align: center;
-
+    top: 0;
   }
-
+ 
   p{
     color: red;
-    font-weight: 3;
+    font-size: 15px;
+    margin: 0%;
   }
 
+  .formulario__label{
+    
+    cursor: pointer;
+    
+  }
 
+  .formulario__input{
+    width: 500px;
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 1px;
+    height: 40px;
+    transition: .3s ease all;
+    margin: 0%;
+  }
 
+  .formulario__input:focus{
+    border: 3px solid #0971f1;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+  }
 
+  .formulario__input__hora{
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 40px;
+    width: 150px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+  }
+
+  .formulario__input__hora:focus{
+    border: 3px solid #0971f1;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+  }
+
+  .formulario__btn{
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+    margin-left: 120px;
+  }
+
+  .formulario__btn:hover{
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);;
+  }
+
+   .a{
+    columns: 2;
+    display:flex ;
+    justify-content: space-between;
+    margin-left: 110px;
+    margin-right: 145px;
+    
+   }
+
+   .c{
+    columns: 2;
+    display: flex;
+    justify-content: right;
+    margin-right: 145px;
+    margin-bottom: 0;
+    margin-top: 0;
+    gap: 10px;
+   }

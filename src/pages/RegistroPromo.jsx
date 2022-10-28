@@ -21,7 +21,7 @@ function RegistroPromo() {
         ></div>
 
         <div className='rightSide'>
-        <h2 className='form'>Registrar Promocion</h2>
+        <h2 >Registrar Promocion</h2>
         <form id="stripe-login"  onSubmit={handleSubmit(onSubmit)}>
             <div className="formInput">
                 <label >Nombre del Producto*</label>
@@ -102,6 +102,7 @@ function RegistroPromo() {
                     <option value='carne asada'>Carne Asada</option>
                     <option value='otro'>Otros</option>
                 </select>
+                {errors.promocion_fecha_inicio?.type === 'required' && <p>El campo "Categoria" es requerido</p>}      
             </div>
 
 
@@ -140,10 +141,11 @@ function RegistroPromo() {
             <button type="submit" >
                 Enviar
             </button>
-
+            <button type="/Home" >
+                Cancelar
+            </button>
         </form>
         </div>
     </div>
 }
-
 export default RegistroPromo
