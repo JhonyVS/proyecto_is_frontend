@@ -22,14 +22,25 @@ function Navbar() {
         aux2.style.display="flex";
         pos.style.display="none" ;
         pos2.style.display="none" ;
+     }
+    
+    const test2 = () => { 
+        let aux = document.getElementById("cerrarsesion")
+        let pos = document.getElementById("iniciarsesion")
+        let aux2 = document.getElementById("cerrarsesion2")
+        let pos2 = document.getElementById("iniciarsesion2")
+        aux.style.display="none";
+        aux2.style.display="none";
+        pos.style.display="flex" ;
+        pos2.style.display="flex" ;
     }
     
   return (
     <div className="navbar">
         <div className="leftSide" id={openLinks ? "open" : "close"}>
             <img src={Logo}/>
-            
         </div>
+
         <div className="rightSide">
             <Link to="/">Home</Link>
             <Link to="/registrarNegocio" id="iniciarsesion">Registrar Negocio</Link>
