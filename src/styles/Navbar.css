@@ -1,3 +1,11 @@
+#cerrarsesion, #cerrarsesion2{
+  display: none;
+}
+
+#iniciarsesion, #iniciarsesion2{
+  display: flex;
+}
+
 .navbar {
     width: 100%;
     height: 80px;
