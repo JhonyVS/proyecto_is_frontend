@@ -1,85 +1,379 @@
-
 .contact {
-
-    width: 100%;
-    height: 90vh;
-    display: flex;
-  }
-  
-  .contact .leftSide {
-    height: 100%;
-    flex: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  .contact .rightSide {
-    padding-left: 3%;
-    padding-right: 3%;
-    height: 100%;
-    flex: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .contact .rightSide h1 {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    font-weight: 10;
-    font-size: 50px;
-    margin-left: 30px;
-  }
-  
-  form {
-    margin: 5rem auto 0;
-    width: 24rem;
-  
-    .count {
-      padding: 0.25rem 0;
-      text-align: center;
-      color: #fff;
-      background: #333;
-      border-radius: 4px;
-    }
-  
-    div,
-    select {
-      margin-bottom: 1.5rem;
-      width: inherit;
-    }
-  
-    input,
-    select {
-      padding: 0 0.5rem;
-      width: inherit;
-      height: 2rem;
-      border-radius: 4px;
-      border: none;
-      box-sizing: border-box;
-    }
-  
-    input[type="submit"] {
-      height: 2.5rem;
-      font-size: 1rem;
-      color: #fff;
-      background: #0971f1;
-      cursor: pointer;
-    }
+  width: 100%;
+  height: 79vh;
+  display: flex;
 }
 
-  h2{
-    color:black;
-    text-align: center;
+.contact .leftSide {
+  height: 100%;
+  flex: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  }
+.contact .rightSide {
+  padding-left: 3%;
+  padding-right: 3%;
+  height: 100%;
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #e5e5e5;
+}
 
-  p{
-    color: red;
-    font-weight: 3;
-  }
+.contact .rightSide h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 10;
+  font-size: 50px;
+  margin-left: 30px;
+}
+
+.tituloRegNeg{
+  color:black;
+  text-align: center;
+  top: 0;
+}
+
+.mensajeError2{
+  font-family: sans-serif;
+  color: red;
+  font-size: 15px; 
+  padding:0%;
+  margin: 0%;
+} 
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column_nombreNeg {
+  text-align:right;
+  margin-right:5px;
+  float: left;
+  width: 25%;
+  padding: 1%;
+  height: 20px; 
+}
+
+.column_nomNeg {
+  float: left;
+  margin-bottom: 0px;
+  width: 60%;
+  padding: 1%;
+  height: 20px; 
+}
+
+.column30N {
+  text-align:right;
+  float:left;
+  width: 30%;
+  padding: 0%;
+  height: 20px; 
+}
+
+.column40N {
+  float: left;
+  width: 40%;
+  padding: 0%;
+  height: 10px; 
+}
+
+.column_nombreProp {
+  text-align:right;
+  margin-right:5px;
+  float: left;
+  width: 25%;
+  padding: 1%;
+  height: 20px; 
+}
+
+.column_nomProp {
+  float: left;
+  margin-bottom: 0px;
+  width: 60%;
+  padding: 1%;
+  height: 20px; 
+}
+
+.column_logoNeg {
+  text-align:right;
+  margin-right:5px;
+  float: left;
+  width: 25%;
+  padding: 1%;
+  height: 20px; 
+}
+
+.column_logNeg {
+  float: left;
+  margin-bottom: 0px;
+  width: 60.5%;
+  padding: 1%;
+  height: 20px; 
+}
+
+.boxImagen2{
+  margin-bottom: 0px;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px;
+  width: 100%;
+  height: 30px;
+  padding-left: 1px;
+  padding-top:0px;
+  outline: none;
+}
+.boxImagen2::-webkit-file-upload-button{
+  font-family: sans-serif;
+  cursor: pointer;
+  color: #000;
+  background: #aeaeae;
+  line-height: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px;
+} 
+.boxImagen2:focus{
+  border: 3px solid #0971f1;
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.column_ubiNeg {
+  text-align:right;
+  margin-right:5px;
+  float: left;
+  width: 25%;
+  padding: 1%;
+  height: 20px; 
+}
+
+.column_ubicacion {
+  float: left;
+  margin-bottom: 0px;
+  width: 60%;
+  padding: 1%;
+  height: 20px; 
+}
+
+.column_descripcionNeg {
+  text-align:right;
+  margin-right:5px;
+  float: left;
+  width: 25%;
+  padding: 1%;
+  height: 20px; 
+}
+
+.column_descNeg {
+  float: left;
+  margin-bottom: 0px;
+  width: 60%;
+  padding: 1%;
+  height: 20px; 
+}
 
 
+.column_horaNeg {
+  text-align:right;
+  margin-top:5px;
+  float: left;
+  width: 32.5%;
+  padding: 1%;
+  height: 20px; /* Should be removed. Only for demonstration */
+}
+
+.column_horaNegocio {
+  text-align: center;
+  float: left;
+  width: 10%;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0%;
+  height: 30px; 
+}
+
+.column10N {
+  float: left;
+  width: 9%;
+  padding-bottom: 10px;
+  padding: 0%;
+  height: 5px; 
+}
+
+.column30HN {
+  text-align:right;
+  margin-left:20px;
+  margin-top: -10px;
+  float: left;
+  width: 31%;
+  padding: 1%;
+  height: 5px; 
+}
+
+.column30HN2 {
+  text-align:right;
+  margin-left:20px;
+  margin-top: -10px;
+  float: left;
+  width: 40%;
+  padding: 1%;
+  height: 5px; 
+}
+
+.column_numUsu {
+  text-align:right;
+  margin-top:5px;
+  float: left;
+  width: 22.5%;
+  padding: 1%;
+  height: 20px; /* Should be removed. Only for demonstration */
+}
+
+.column_numUsuInput {
+
+  float: left;
+  width: 20%;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0%;
+  height: 30px; 
+}
+
+.column_contraseña {
+  text-align:right;
+  margin-top:5px;
+  float: left;
+  width: 22.5%;
+  padding: 1%;
+  height: 20px; /* Should be removed. Only for demonstration */
+}
+
+.column_password {
+  text-align: center;
+  float: left;
+  width: 20%;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0%;
+  height: 30px; 
+}
 
 
+.column_RepContra {
+  text-align:right;
+  margin-right:5px;
+  float: left;
+  width: 25%;
+  padding: 1%;
+  height: 20px; 
+}
+
+.column_repPass {
+  float: left;
+  margin-bottom: 0px;
+  width: 60%;
+  padding: 1%;
+  height: 20px; 
+}
+
+
+.labelNeg{
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  width:100%;
+  margin-top: 100px;
+}
+
+.column_btnNeg{
+  text-align:right;
+  float:left;
+  margin-top: 20px;
+  width: 40%;
+  padding-bottom: 1%;
+  height: 20px;
+}
+
+.input_formNeg{
+  font-family: sans-serif;
+  width: 100%;
+  height: 23px;
+  background: #fff;
+  border-radius: 1px;
+  border: 1px solid transparent;
+  transition: .3s ease all; 
+}
+
+
+.input_formNeg:focus{
+  border: 3px solid #0971f1;
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.input_horaNeg{
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  height: 28px;
+  background: #fff;
+  border-radius: 1px;
+  border: 1px solid transparent;
+  transition: .3s ease all;
+}
+
+.input_horaNeg:focus{
+  border: 3px solid #0971f1;
+  outline: none;
+  box-shadow: 1px 0px 30px rgba(163, 163, 163, 0.4);  
+}
+
+.input_formDoble{
+  font-family: sans-serif;
+  text-align: center;
+  width: 100%;
+  height: 23px;
+  background: #fff;
+  border-radius: 1px;
+  border: 1px solid transparent;
+  transition: .3s ease all; 
+}
+
+
+.input_formDoble:focus{
+  border: 3px solid #0971f1;
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.formulario__btnNeg{
+  height: 35px;
+  line-height: 15px;
+  width: 50%;
+  background: #121619;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  white-space: normal;
+  cursor: pointer;
+  transition: .1s ease all;
+  margin-left: 120px;
+}
+
+.formulario__btnNeg:hover{
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);;
+}
