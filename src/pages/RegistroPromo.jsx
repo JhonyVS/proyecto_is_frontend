@@ -216,9 +216,7 @@ function RegistroPromo() {
                     <button  className='formulario__btnPromo' onClick={()=> history(-1)}>Cancelar</button>
                 </div>
             </div>
-            <button type="/Home" >
-                Cancelar
-            </button>
+            
         </form>
         </div>
     </div>
