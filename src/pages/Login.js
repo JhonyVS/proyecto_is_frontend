@@ -8,7 +8,8 @@ import imgLeft from '../assets/comidas.jpg'
 import axios from 'axios';
 import Cookies from 'universal-cookie';
 
-const baseUrl="http://127.0.0.1:8000/api/login/negocio";
+const domain = "https://backend-descuentos-production.up.railway.app";
+const baseUrl = domain + "/api/login/negocio";
 const cookies = new Cookies();
 
 class Login extends React.Component{
