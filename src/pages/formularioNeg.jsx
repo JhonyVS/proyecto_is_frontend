@@ -36,7 +36,7 @@ const FormularioNeg = () => {
       <>
         
         <GlobalStyle />
-        <Navbar/>
+        
         <Wrapper>
           <div className="container">
             <div className="modal">
