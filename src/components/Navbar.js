@@ -33,7 +33,7 @@ function Navbar() {
             <a href='registrarNegocio' id='iniciarsesion'>Registrar Negocio</a>
             <a href='/ini' id='iniciarsesion2'>Iniciar sesión</a>
             <a href='/registrarPromocion' id='cerrarsesion'>Registrar Promocion</a>
-            <a href='/' id='cerrarsesion2'>Cerrar Sesion</a>
+            <a href='/' id='cerrarsesion2' onClick={test2}>Cerrar Sesion</a>
             {/* <Link to="/">Home</Link>
             <Link to="/registrarNegocio"id="iniciarsesion">Registrar Nekjhkjgocio</Link>
             <Link to="/ini" id="iniciarsesion2" >Iniciar sesion</Link>
