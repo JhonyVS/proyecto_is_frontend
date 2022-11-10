@@ -34,7 +34,7 @@ function Navbar() {
         </div>
         <div className="rightSide">
             <Link to="/">Home</Link>
-            <Link to="/registrarNegocio"id="iniciarsesion">Registrar Nekjhkjgocio</Link>
+            <Link to="/registrarNegocio"id="iniciarsesion">Registrar Negocio</Link>
             <Link to="/ini" id="iniciarsesion2" >Iniciar sesion</Link>
             <Link to="/registrarPromocion"id="cerrarsesion">Registrar Promocion</Link>
             <Link to="/"id="cerrarsesion2"onClick={test2}>Cerrar Sesion</Link>
