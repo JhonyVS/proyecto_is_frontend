@@ -8,7 +8,7 @@ import imgLeft from '../assets/comidas.jpg'
 import axios from 'axios';
 import Cookies from 'universal-cookie';
 
-const baseUrl = "https://backend-descuentos-production.up.railway.app/api/login/negocio";
+const baseUrl = `${process.env.React_APP_API}/api/login/negocio`;
 const cookies = new Cookies();
 
 class Login extends React.Component{
