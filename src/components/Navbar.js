@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import Logo from '../assets/logo.png';
 import '../styles/Navbar.css'
-import ReorderIcon from '@mui/icons-material/Reorder';
+import { HiOutlineMenu } from "react-icons/hi";
+
+// import ReorderIcon from '@mui/icons-material/Reorder';
 
 function Navbar() {
     const [openLinks, setOpenLinks] = useState(false);
@@ -41,7 +43,7 @@ function Navbar() {
             <Link to="/"id="cerrarsesion2"onClick={test2}>Cerrar Sesion</Link> */}
             
             <button onClick={toogleNavbar}>
-                <ReorderIcon/>
+                <HiOutlineMenu/>
             </button>
 
         </div>
