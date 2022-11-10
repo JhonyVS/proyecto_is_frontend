@@ -3,6 +3,8 @@ import Logo from '../assets/logo.png';
 import '../styles/Navbar.css'
 import { HiOutlineMenu } from "react-icons/hi";
 
+import { Link } from 'react-router-dom';
+
 // import ReorderIcon from '@mui/icons-material/Reorder';
 
 function Navbar() {
@@ -31,16 +33,11 @@ function Navbar() {
           
         </div>
         <div className="rightSide">
-            <a href='/'>Home</a>
-            <a href='registrarNegocio' id='iniciarsesion'>Registrar Negocio</a>
-            <a href='/ini' id='iniciarsesion2'>Iniciar sesión</a>
-            <a href='/registrarPromocion' id='cerrarsesion'>Registrar Promocion</a>
-            <a href='/' id='cerrarsesion2' onClick={test2}>Cerrar Sesion</a>
-            {/* <Link to="/">Home</Link>
+            <Link to="/">Home</Link>
             <Link to="/registrarNegocio"id="iniciarsesion">Registrar Nekjhkjgocio</Link>
             <Link to="/ini" id="iniciarsesion2" >Iniciar sesion</Link>
             <Link to="/registrarPromocion"id="cerrarsesion">Registrar Promocion</Link>
-            <Link to="/"id="cerrarsesion2"onClick={test2}>Cerrar Sesion</Link> */}
+            <Link to="/"id="cerrarsesion2"onClick={test2}>Cerrar Sesion</Link>
             
             <button onClick={toogleNavbar}>
                 <HiOutlineMenu/>
