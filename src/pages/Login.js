@@ -45,10 +45,10 @@ iniciarSesion=()=>{
       console.log(response); 
       //aumentar uhn status para controlar que tiene que devolver si o si en todos con 
       if(response.data.status === true){
-        test()
         cookies.set('id', response.usuario_id, {path: "/"});
         cookies.set('token', response.token, {path: "/"}); 
         window.location.href="/";
+        test()
       }else{alert('El usuario o la contraseña no son correctos');}
   })
     }
