@@ -54,7 +54,7 @@
     width: 90%;
     max-width: 450px;
     position: relative;
-    padding: 0px;
+    padding: 5px;
     -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     text-align: center;
@@ -131,7 +131,7 @@
     display: inline-block;
     font-size: 20px;
     margin: 5px;
-    width: 85%;
+    width: 80%;
     
     border: 2px solid #f6f6f6;
     -webkit-transition: all 0.5s ease-in-out;
@@ -165,7 +165,7 @@
     display: inline-block;
     font-size: 20px;
     margin: 5px;
-    width: 85%;
+    width: 80%;
     border: 2px solid #f6f6f6;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
