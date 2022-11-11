@@ -359,7 +359,6 @@
   transition: .3s ease all; 
 }
 
-    top: 0;
 .input_formDoble:focus{
   border: 3px solid #0971f1;
   outline: none;
