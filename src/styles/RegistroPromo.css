@@ -10,6 +10,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
 }
 
 .contact .rightSide {
@@ -21,6 +22,12 @@
   flex-direction: column;
   justify-content: center;
   background: #e5e5e5;
+}
+
+@media only screen and (max-width: 900px) {
+  .contact .leftSide {
+    display: none;
+  }
 }
 
 .contact .rightSide h1 {
