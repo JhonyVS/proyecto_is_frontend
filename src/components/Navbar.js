@@ -32,8 +32,7 @@ function Navbar() {
     <div className="navbar">
         {/* <a className="text-white" href='/registrarNegocio'>fasdfsdafsdf</a> */}
         <div className="leftSide" id={openLinks ? "open" : "close"}>
-            <img src={Logo}/>
-          
+            <img src={Logo} href='/' className='logo' />
         </div>
         <div className="rightSide">
             <Link to="/">Home</Link>

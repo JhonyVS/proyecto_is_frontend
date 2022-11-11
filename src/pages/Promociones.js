@@ -5,6 +5,7 @@ import '../styles/Promociones.css'
 import AlitasMostaza from '../assets/promociones/alitasMostasa.jpg';
 
 
+const baseUrl = `${process.env.React_APP_API}/api/destacados`;
 
 function Promociones() {
 
@@ -15,7 +16,7 @@ function Promociones() {
   },[])
 
   const fetchData = async () => {
-    await fetch('http://localhost:8000/api/destacados')
+    await fetch(baseUrl)
     .then((res) => res.json())
     .then((data) => setProducts(data))
     .catch((err) => {
