@@ -5,8 +5,9 @@ function PromoItem({image, name, precio, precioDescuento}) {
     <div className="menuItem">
         <div style={{ backgroundImage: `url(${image})`}}></div>
         <h1>{name}</h1>
-        <p> Precio Orignal: {precio} Bs. </p>
-        <p> Precio con Descuento: {precioDescuento} Bs.  </p>
+        <p> Precio sin descuento: {precio} Bs. </p>
+
+        <p> Precio con descuento: {precioDescuento} Bs.  </p>
     </div>
   )
 }
