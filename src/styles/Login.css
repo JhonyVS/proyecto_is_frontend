@@ -29,25 +29,17 @@
     background: #e5e5e5;
   }
   
-<<<<<<< HEAD
-=======
   .tituloIni{
     color:black;
     text-align: center;
     top: 0;
   }
 
->>>>>>> develop
   @media only screen and (max-width: 900px) {
     .contact_l .leftSide_l {
     display: none;
     }
   }
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> develop
   /* STRUCTURE */
   
   .wrapper {

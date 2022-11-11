@@ -1,12 +1,12 @@
 import axios from 'axios';
-const baseUrl = proces.env.REACT_APP_BASE_URL
+const baseUrl = '${process.env.React_APP_API}';
 
 
 export async function getCategorias(){
 
     try {
         const response = await axios({
-            url: `${baseURL}/categorias`,
+            url: `${baseUrl}/categorias`,
             method: 'GET',
         })
         return response
@@ -19,7 +19,7 @@ export async function guardarProducto(productoData){
 
     try {
         const response = await axios({
-            url: `${baseURL}/registro/producto`,
+            url: `${baseUrl}/registro/producto`,
             method: 'POST',
             data: productoData
         })
@@ -33,7 +33,7 @@ export async function guardarNegocio(negocioData){
 
     try {
         const response = await axios({
-            url: `${baseURL}/registro/negocio`,
+            url: `${baseUrl}/registro/negocio`,
             method: 'POST',
             data: negocioData
         })
