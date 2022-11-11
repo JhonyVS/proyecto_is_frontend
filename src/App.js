@@ -7,7 +7,6 @@ import Footer from './components/Footer';
 import Promociones from './pages/Promociones';
 import RegistroNegocio from './pages/RegistroNegocio';
 import RegistroPromo from './pages/RegistroPromo';
-import FormularioNeg from './pages/FormularioNeg';
 
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
           <Route exact path='/registrarNegocio' element={<RegistroNegocio/>} />
 
           <Route exact path='/registrarPromocion' element={<RegistroPromo/>} />
-          <Route exact path='/registrarNeg' element={<FormularioNeg/>} />
         </Routes>
         <Footer/>
       </Router>
