@@ -40,16 +40,15 @@ iniciarSesion=()=>{
   if(this.state.form.nick.length < 4 || this.state.form.password.length < 8 ){
     alert('El nick es menor a 4 caracteres o el password es menor a 8 caracteres');
   }else{
-    test()
     axios.post(baseUrl, this.state.form)
     .then(response=>{
       console.log(response); 
       //aumentar uhn status para controlar que tiene que devolver si o si en todos con 
       if(response.data.status === true){
-        
-            cookies.set('id', response.usuario_id, {path: "/"});
-            cookies.set('token', response.token, {path: "/"}); 
-            window.location.href="/";
+        test()
+        cookies.set('id', response.usuario_id, {path: "/"});
+        cookies.set('token', response.token, {path: "/"}); 
+        window.location.href="/";
       }else{alert('El usuario o la contraseña no son correctos');}
   })
     }
