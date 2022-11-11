@@ -2,12 +2,9 @@ import React, {useState} from 'react';
 import Logo from '../assets/logo.png';
 import '../styles/Navbar.css'
 import { HiOutlineMenu } from "react-icons/hi";
-
-import { Link } from 'react-router-dom';
-
 import Cookies from 'universal-cookie';
+import { Link } from 'react-router-dom';
 const cookies = new Cookies();
-
 // import ReorderIcon from '@mui/icons-material/Reorder';
 
 function Navbar() {
@@ -28,14 +25,14 @@ function Navbar() {
         pos2.style.display="flex" ;
         cookies.remove('id', {path: "/"});
         cookies.remove('token', {path: "/"});
+        window.location.href='./';
     }
 
   return (
     <div className="navbar">
         {/* <a className="text-white" href='/registrarNegocio'>fasdfsdafsdf</a> */}
         <div className="leftSide" id={openLinks ? "open" : "close"}>
-            <img src={Logo}/>
-          
+            <img src={Logo} href='/' className='logo' />
         </div>
         <div className="rightSide">
             <Link to="/">Home</Link>

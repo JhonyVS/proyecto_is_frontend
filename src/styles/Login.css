@@ -29,12 +29,25 @@
     background: #e5e5e5;
   }
   
+<<<<<<< HEAD
+=======
+  .tituloIni{
+    color:black;
+    text-align: center;
+    top: 0;
+  }
+
+>>>>>>> develop
   @media only screen and (max-width: 900px) {
     .contact_l .leftSide_l {
     display: none;
     }
   }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> develop
   /* STRUCTURE */
   
   .wrapper {
@@ -199,6 +212,8 @@
     border-radius: 3px;
     cursor: pointer;
     transition: .1s ease all;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .btn:hover{

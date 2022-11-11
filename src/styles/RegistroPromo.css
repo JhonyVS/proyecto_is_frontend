@@ -36,9 +36,10 @@
   font-weight: 10;
   font-size: 50px;
   margin-left: 30px;
-}
+} */
 
 .tituloRegPromo{
+  width: 100%;
   color:black;
   text-align: center;
   top: 0;
