@@ -23,6 +23,9 @@ function Navbar() {
         aux2.style.display="none";
         pos.style.display="flex" ;
         pos2.style.display="flex" ;
+        cookies.remove('id', {path: "/"});
+        cookies.remove('token', {path: "/"});
+        window.location.href='./';
     }
 
   return (
