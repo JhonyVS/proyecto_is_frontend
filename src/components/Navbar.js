@@ -40,6 +40,12 @@ function Navbar() {
         <div className="leftSide" id={openLinks ? "open" : "close"}>
             <img src={Logo}/>
           
+            <a href='/'><img src={Logo} class="logo"/></a>
+            <div className="hiddenLinks">
+            <Link to="/">Home</Link>
+            <Link to="/registrarPromocion">Registrar Negocio</Link>
+            <Link to="/registrarProducto">Registrar Promoción</Link>                 
+            </div>
         </div>
         <div className="rightSide">
             <Link to="/">Home</Link>
