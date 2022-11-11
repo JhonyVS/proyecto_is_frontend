@@ -6,8 +6,9 @@ import imagenFondo from '../assets/fondoComida.png';
 import '../styles/Home.css';
 
 function Home() {
-  return (<Container>
-    <div className = "home" style={{ backgroundImage: `url(${imagenFondo})`}}>
+  return (<div className = "home" style={{ backgroundImage: `url(${imagenFondo})`}}>
+    <Container>
+    
         <div className='headerContainer' >
             <Row>
                 <Col>
@@ -32,8 +33,8 @@ function Home() {
             </Link> */}
 
         </div>
-    </div>
     </Container>
+    </div>
   )
 }
 
