@@ -47,7 +47,6 @@ iniciarSesion=()=>{
       if(response.data.status === true){
         cookies.set('id', response.usuario_id, {path: "/"});
         cookies.set('token', response.token, {path: "/"}); 
-        window.location.href="/";
         test()
       }else{alert('El usuario o la contraseña no son correctos');}
   })
@@ -98,7 +97,6 @@ iniciarSesion=()=>{
 }
 
 const test = () => { 
-
   let aux = document.getElementById("cerrarsesion")
   let pos = document.getElementById("iniciarsesion")
   let aux2 = document.getElementById("cerrarsesion2")
@@ -107,7 +105,6 @@ const test = () => {
   aux2.style.display="flex";
   pos.style.display="none" ;
   pos2.style.display="none";
-  
 }
 
 export default Login
