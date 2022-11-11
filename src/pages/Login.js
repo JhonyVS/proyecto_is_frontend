@@ -80,7 +80,7 @@ iniciarSesion=()=>{
                   <input type="password"  name="password" placeholder="Password"onChange={this.handleChange}/>
                   <div></div>
                   {/* <button type="submit" className='btn'onClick={this.manejadorBoton} >Iniciar Sesión</button> */}
-                   <button  id="iniciosesion" type="submit" className='btn' onClick={this.iniciarSesion}>IniciarX Sesión</button> 
+                   <button  id="iniciosesion" type="submit" className='btn' onClick={this.iniciarSesion}>Iniciar Sesión</button> 
                   <div></div>
                 </form>
                     
