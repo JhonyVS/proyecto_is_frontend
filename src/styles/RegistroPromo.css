@@ -1,0 +1,367 @@
+.contact {
+  width: 100%;
+  height: 79vh;
+  display: flex;
+}
+
+.contact .leftSide {
+  height: 100%;
+  flex: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+
+.contact .rightSide {
+  padding-left: 3%;
+  padding-right: 3%;
+  height: 100%;
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #e5e5e5;
+}
+
+@media only screen and (max-width: 900px) {
+  .contact .leftSide {
+    display: none;
+  }
+}
+
+.contact .rightSide h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 10;
+  font-size: 50px;
+  margin-left: 30px;
+}
+
+.tituloRegPromo{
+  color:black;
+  text-align: center;
+  top: 0;
+}
+.mensajeError{
+  font-family: sans-serif;
+  color: red;
+  font-size: 15px; 
+  padding:0%;
+  margin: 0%;
+} 
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column10 {
+  float: left;
+  width: 9%;
+  padding-bottom: 10px;
+  padding: 0%;
+  height: 5px; 
+}
+
+.column15 {
+  float: left;
+  width: 15%;
+  padding: 0%;
+  height: 20px; 
+}
+.column15a {
+  float: left;
+  width: 17%;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding: 0%;
+  height: 30px; 
+}
+
+.column15b {
+  text-align: center;
+  float: left;
+  width: 10%;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0%;
+  height: 30px; 
+}
+
+.column15l {
+  float: left;
+  width: 14.4%;
+  padding-right: 0px;
+  padding: 0%;
+  height: 20px; 
+}
+
+.column25 {
+  text-align:right;
+  margin-right:5px;
+  float: left;
+  width: 25%;
+  padding: 1%;
+  height: 20px; 
+}
+
+.column25a {
+  text-align:right;
+  margin-top:15px;
+  float: left;
+  width: 25%;
+  padding: 1%;
+  height: 20px; /* Should be removed. Only for demonstration */
+}
+
+.column25b {
+  text-align:right;
+  margin-top:5px;
+  float: left;
+  width: 32%;
+  padding: 1%;
+  height: 20px; /* Should be removed. Only for demonstration */
+}
+
+.column30 {
+  text-align:right;
+  float:left;
+  width: 30%;
+  padding: 0%;
+  height: 20px; 
+}
+
+.column30a {
+  text-align:right;
+  margin-left:20px;
+  float: left;
+  width: 31%;
+  padding: 1%;
+  height: 5px; 
+}
+.column30b {
+  text-align:right;
+  margin-left:20px;
+  float: left;
+  width: 38%;
+  padding: 1%;
+  height: 5px; 
+}
+
+.column30c {
+  text-align:right;
+  margin-left:20px;
+  margin-top: -10px;
+  float: left;
+  width: 31%;
+  padding: 1%;
+  height: 5px; 
+}
+
+.column30d {
+  text-align:right;
+  margin-left:20px;
+  margin-top: -10px;
+  float: left;
+  width: 40%;
+  padding: 1%;
+  height: 5px; 
+}
+
+.column40 {
+  float: left;
+  width: 40%;
+  padding: 0%;
+  height: 10px; 
+}
+.column50 {
+  float: left;
+  width: 50%;
+  padding: 0%;
+  margin-top: 5px;
+  height: 20px; 
+}
+
+.column60 {
+  float: left;
+  margin-bottom: 0px;
+  width: 60%;
+  padding: 1%;
+  height: 20px; 
+}
+.column60d {
+  float: left;
+  padding-bottom: 100px;
+  width: 60%;
+  padding: 1%;
+  height: 20px; 
+}
+
+.column_btn{
+  text-align:right;
+  float:left;
+  margin-top: 20px;
+  width: 40%;
+  padding: 0%;
+  height: 20px;
+}
+
+/* .interlineado {
+
+line-height: 10%;
+} */
+
+.labelPromo{
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  width:100%;
+  margin-top: 100px;
+}
+
+.input_form{
+  font-family: sans-serif;
+  width: 100%;
+  height: 23px;
+  background: #fff;
+  border-radius: 1px;
+  border: 1px solid transparent;
+  transition: .3s ease all; 
+}
+
+
+.input_form:focus{
+  border: 3px solid #0971f1;
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.input_formPrecio{
+  font-family: sans-serif;
+  text-align: center;
+  width: 100%;
+  height: 23px;
+  background: #fff;
+  border-radius: 1px;
+  border: 1px solid transparent;
+  transition: .3s ease all; 
+}
+
+
+.input_formPrecio:focus{
+  border: 3px solid #0971f1;
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+ .boxImagen1{
+  font-family: sans-serif;
+  margin-bottom: 0px;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 1px;
+  box-shadow: 0px 0px 0px;
+  width: 100%;
+  height: 30px;
+  padding-left: 1px;
+  padding-top:0px;
+  outline: none;
+}
+.boxImagen1::-webkit-file-upload-button{
+  font-family: sans-serif;
+  cursor: pointer;
+  color: #000;
+  background: #aeaeae;
+  line-height: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px;
+}
+
+.boxImagen1:focus{
+  border: 3px solid #0971f1;
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.categ_opcion{
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  display: flex;
+  cursor: pointer;
+  width: 100%;
+  height: 30px;
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 1px;
+  transition: .3s ease all;
+}
+
+.categ_opcion:focus{
+  border: 3px solid #0971f1;
+  outline: none;
+  box-shadow: 1px 0px 30px rgba(163, 163, 163, 0.4); 
+}
+
+
+.input_fecha{
+  text-align: center;
+  font: 0.9em Sans-Serif;
+  cursor: pointer;
+  width: 100%;
+  height: 28px;
+  background: #fff;
+  border-radius: 1px;
+  border: 1px solid transparent;
+  transition: .3s ease all;
+}
+
+.input_fecha:focus{
+  border: 3px solid #0971f1;
+  outline: none;
+  box-shadow: 1px 0px 30px rgba(163, 163, 163, 0.4);  
+}
+
+
+.input_hora{
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  height: 28px;
+  background: #fff;
+  border-radius: 1px;
+  border: 1px solid transparent;
+  transition: .3s ease all;
+}
+
+.input_hora:focus{
+  border: 3px solid #0971f1;
+  outline: none;
+  box-shadow: 1px 0px 30px rgba(163, 163, 163, 0.4);  
+}
+
+.formulario__btnPromo{
+  height: 45px;
+  line-height: 45px;
+  width: 50%;
+  background: #121619;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .1s ease all;
+  margin-left: 120px;
+}
+
+.formulario__btnPromo:hover{
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);;
+}
+
