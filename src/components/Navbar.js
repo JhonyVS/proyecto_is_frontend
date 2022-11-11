@@ -5,6 +5,9 @@ import { HiOutlineMenu } from "react-icons/hi";
 
 import { Link } from 'react-router-dom';
 
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+
 // import ReorderIcon from '@mui/icons-material/Reorder';
 
 function Navbar() {
@@ -25,7 +28,6 @@ function Navbar() {
         pos2.style.display="flex" ;
         cookies.remove('id', {path: "/"});
         cookies.remove('token', {path: "/"});
-        window.location.href='./';
     }
 
   return (
