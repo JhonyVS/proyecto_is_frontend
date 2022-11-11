@@ -15,8 +15,12 @@
     "react-hook-form": "^7.38.0",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.2",
+<<<<<<< HEAD
     "react-scripts": "5.0.1",
 <<<<<<< HEAD
+=======
+    "react-scripts": "^5.0.1",
+>>>>>>> 10b5fb34d93a6327996a297f990e820a186da4ff
     "universal-cookie": "^4.0.4",
 =======
     "styled-components": "^5.3.6",

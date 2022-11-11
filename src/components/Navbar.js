@@ -2,12 +2,9 @@ import React, {useState} from 'react';
 import Logo from '../assets/logo.png';
 import '../styles/Navbar.css'
 import { HiOutlineMenu } from "react-icons/hi";
-
-import { Link } from 'react-router-dom';
-
 import Cookies from 'universal-cookie';
+import { Link } from 'react-router-dom';
 const cookies = new Cookies();
-
 // import ReorderIcon from '@mui/icons-material/Reorder';
 
 function Navbar() {
@@ -16,6 +13,7 @@ function Navbar() {
     const toogleNavbar = () => {
         setOpenLinks(!openLinks);
     }
+
     const test2 = () => { 
         let aux = document.getElementById("cerrarsesion")
         let pos = document.getElementById("iniciarsesion")
@@ -27,6 +25,7 @@ function Navbar() {
         pos2.style.display="flex" ;
         cookies.remove('id', {path: "/"});
         cookies.remove('token', {path: "/"});
+        window.location.href='./';
     }
 
   return (
