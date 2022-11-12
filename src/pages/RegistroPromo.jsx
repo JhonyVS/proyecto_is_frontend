@@ -37,8 +37,7 @@ const RegistroPromo = () =>{
  }   
     
             
-    return( 
-    <div className='contact'>
+    return <div className='contact'>
         <div 
             className='leftSide'
             style={{backgroundImage: `url(${imgLeft})`}}
@@ -232,12 +231,11 @@ const RegistroPromo = () =>{
                     <button  className='formulario__btnPromo' onClick={()=> history(-1)}>Cancelar</button>
                 </div>
             </div>
-
+            
         </form>
         </div>
     </div>
-    );
+    
 }
-
 
 export default RegistroPromo
