@@ -3,7 +3,7 @@ import imgLeft from '../assets/regneg_left.png'
 import { useForm } from 'react-hook-form';
 import {useNavigate} from 'react-router-dom'
 import '../styles/RegistroPromo.css'
-//import { JoinRightSharp } from '@mui/icons-material';
+
 
 function RegistroPromo() {
     const {register, formState:{errors}, handleSubmit} = useForm();
@@ -12,18 +12,17 @@ function RegistroPromo() {
 
     const onSubmit = async (data) => {
         console.log(data);
-        console.log(data.nombre);
-
-
-        
+        console.log(data.nombre);    
     }
-            
+
+    
+  
+    
     return <div className='contact'>
         <div 
             className='leftSide'
             style={{backgroundImage: `url(${imgLeft})`}}
         ></div>
-
         <div className='rightSide'>
         <h2 class="tituloRegPromo">Registrar Promoción</h2>
         <form id="stripe-login"  onSubmit={handleSubmit(onSubmit)}>
@@ -38,7 +37,8 @@ function RegistroPromo() {
                         minLength: 4,
                         pattern: /^[A-Za-z0-9ñáéíóúÁÉÍÓÚ\s]+$/g
                         
-                    })}/>
+                        
+                    })}/> 
                 </div>
             </div>
             <div class="row">
@@ -56,7 +56,7 @@ function RegistroPromo() {
             <div class="row">
 
                 <div class="column30">
-                    <label class="labelPromo">Precio sin descuento en Bs.</label>
+                    <label class="labelPromo">Precio sin Descuento en Bs.</label>
                 </div>
                 <div class="column15l">
                     <input  type="number" class="input_formPrecio"{...register('precio_original',{
@@ -66,7 +66,7 @@ function RegistroPromo() {
                     })}/>
                 </div>
                 <div class="column30">
-                    <label class="labelPromo">Precio con descuento en Bs.</label>
+                    <label class="labelPromo">Precio con Descuento en Bs.</label>
                 </div>
                 <div class="column15l">
                     <input type="number" class="input_formPrecio"{...register('precio_descuento',{
@@ -119,7 +119,7 @@ function RegistroPromo() {
                     <label class="labelPromo">Imagen de Referencia</label>
                 </div>
                 <div class="column60">
-                    <input type="file"class="boxImagen1"{...register('imagen_producto',{
+                    <input type="file"class="boxImagen1" id="archivoInput" accept = "image/png, image/jpeg, image/jpg" {...register('imagen_producto',{
                         required: true,
                         
                         
@@ -130,8 +130,7 @@ function RegistroPromo() {
             <div class="row"> 
                 <div class="column30"></div> 
                 <div class="column50">
-                    {errors.imagen_producto?.type === 'required' && <span class="mensajeError">Es necesario subir una imagen</span>}  
-                    {errors.imagen_producto?.type === 'validate' && <span class="mensajeError">Error</span>}                              
+                    {errors.imagen_producto?.type === 'required' && <span class="mensajeError">Es necesario subir una imagen</span>}                                
                 </div>              
             </div>
 
@@ -141,9 +140,8 @@ function RegistroPromo() {
                     <label class="labelPromo">Categoría</label>
                 </div>
                 <div class="column60">
-                    <select class="categ_opcion"{...register('categoria')}>
-                        <option value='categoria'>Elija una categoría</option>
-                        <option value='comida rapida'>Comida Rapida</option>
+                    <select class="categ_opcion">
+                        <option value='comida rapida'>Comida Rápida</option>
                         <option value='bebida'>Bebida</option>
                         <option value='postre'>Postre</option>
                         <option value='carne asada'>Carne Asada</option>
@@ -151,11 +149,9 @@ function RegistroPromo() {
                     </select>
                 </div>
             </div>
-
-
             <div class="row"> 
                 <div class="column25a">
-                    <label class="labelPromo">Inicio de la promoción</label>
+                    <label class="labelPromo">Inicio de la Promoción</label>
                 </div>
                 <div class="column15a">
                     <input type="date" class="input_fecha" {...register('promocion_fecha_inicio',{
@@ -163,7 +159,7 @@ function RegistroPromo() {
                     })}/>
                 </div>
                 <div class="column25a">
-                    <label class="labelPromo">Fin de la promoción</label>
+                    <label class="labelPromo">Fin de la Promoción</label>
                 </div>
                 <div class="column15a">
                     <input type="date" class="input_fecha" {...register('promocion_fecha_fin',{
