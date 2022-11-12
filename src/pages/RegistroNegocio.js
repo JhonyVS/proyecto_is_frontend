@@ -52,7 +52,7 @@ const RegistroNegocio = () => {
                             required: true,
                             maxLength: 64,
                             minLength: 4,
-                            pattern: /^[A-Za-z0-9ñáéíóúÁÉÍÓÚ\s]+$/g
+                            pattern: /^[A-Za-z0-9ñáéíóúÁÉÍÓÚ]+$/g
                             
                         })}/>
                     </div>
@@ -73,7 +73,7 @@ const RegistroNegocio = () => {
                     <div class="column_nomProp">
                         <input type="text" class="input_formNeg"{...register('nombrePropietario',{
                             required: true,
-                            pattern: /^[A-Za-zñáéíóúÁÉÍÓÚ\s]+$/g,
+                            pattern: /^[A-Za-zñáéíóúÁÉÍÓÚ]+$/g,
                             maxLength: 64,
                             minLength: 4                  
                         })}/>
@@ -195,7 +195,7 @@ const RegistroNegocio = () => {
                     <div class="column_numUsuInput">
                         <input type="text" class="input_formDoble"{...register('nombreUsuario', {
                             required: true,
-                            pattern: /^[A-Za-z0-9ñáéíóúÁÉÍÓÚ\s]+$/g,
+                            pattern: /^[A-Za-z0-9ñ]+$/g,
                             maxLength: 32,
                             minLength: 8                      
                         })}/>
