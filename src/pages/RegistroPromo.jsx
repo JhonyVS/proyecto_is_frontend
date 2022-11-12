@@ -3,22 +3,42 @@ import imgLeft from '../assets/regneg_left.png'
 import { useForm } from 'react-hook-form';
 import {useNavigate} from 'react-router-dom'
 import '../styles/RegistroPromo.css'
+import axios from 'axios';
 
 
-function RegistroPromo() {
-    const {register, formState:{errors}, handleSubmit} = useForm();
-    const history = useNavigate()
 
-
-    const onSubmit = async (data) => {
-        console.log(data);
-        console.log(data.nombre);    
-    }
-
+const baseUrl = `${process.env.React_APP_API}/api/registro/producto`;
+ 
+const RegistroPromo = () =>{
+ const {register, formState:{errors}, handleSubmit} = useForm();
+ const history = useNavigate()
+ 
+ const onSubmit = async (data) => {
+    let state ={
+        form:{
+            "producto_nombre" : data.producto_nombre,
+            "producto_precio" : data.precio_original,
+            "promocion_descuento" : data.precio_descuento,
+            "producto_descripcion" : data.producto_descripcion,
+            "photo" : data.imagen_producto[0],
+            "producto_categoria" : data.categ_option, 
+            "promocion_fecha_inicio" : data.promocion_fecha_inicio,
+            "promocion_fecha_fin" : data.promocion_fecha_fin,
+            "promocion_hora_inicio" : data.promocion_hora_inicio,
+            "promocion_hora_fin" : data.promocion_hora_fin,
+        }
+    } 
+    console.log(state.form)
+        await axios.post(baseUrl, state.form, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+        }); 
+ }   
     
-  
-    
-    return <div className='contact'>
+            
+    return( 
+    <div className='contact'>
         <div 
             className='leftSide'
             style={{backgroundImage: `url(${imgLeft})`}}
@@ -140,7 +160,7 @@ function RegistroPromo() {
                     <label class="labelPromo">Categoría</label>
                 </div>
                 <div class="column60">
-                    <select class="categ_opcion">
+                    <select class="categ_opcion" {...register('categ_option')}>
                         <option value='comida rapida'>Comida Rápida</option>
                         <option value='bebida'>Bebida</option>
                         <option value='postre'>Postre</option>
@@ -216,6 +236,8 @@ function RegistroPromo() {
         </form>
         </div>
     </div>
+    );
 }
+
 
 export default RegistroPromo
