@@ -18,7 +18,7 @@ const RegistroNegocio = () => {
             "nombre_propietario" : data.nombrePropietario,
             "logo" : data.imagenLogo[0],
             "ubicacion" : data.ubicacion,
-            "descrip" : data.ubicacion,
+            "descrip" : data.descripcion,
             "telefono" : data.telefono, 
             "hora_apertura" : data.horario_inicio,
             "hora_cierre" : data.horario_cierre,
@@ -26,8 +26,11 @@ const RegistroNegocio = () => {
             "contrasena" : data.contraseña,
             }}
         console.log(state.form)
-        
-          await axios.post(baseUrl, state.form); 
+        await axios.post(baseUrl, state.form, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+        }); 
             
     }
 
