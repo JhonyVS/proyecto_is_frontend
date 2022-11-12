@@ -3,19 +3,32 @@ import {useNavigate} from 'react-router-dom'
 import { useForm } from 'react-hook-form';
 import imgLeft from '../assets/negocio.jpg'
 import '../styles/registroNegocio.css'
-            
-    
-
+import axios from 'axios';           
+const baseUrl = `${process.env.React_APP_API}/api/registro/negocio`;   
 
 const RegistroNegocio = () => {
+  
     const {register, formState:{errors}, handleSubmit} = useForm();
     const history = useNavigate()
     //Aqui se tiene toda la informacion del formulario en data
     //Desde aqui no entiendo bien como puedo hacer el post
     const onSubmit = async (data) => {
-        console.log(data);
-        console.log(data.nombre);
-    
+        let state ={form:{
+            "nombre_negocio" : data.nombre,
+            "nombre_propietario" : data.nombrePropietario,
+            "logo" : data.imagenLogo[0],
+            "ubicacion" : data.ubicacion,
+            "descrip" : data.ubicacion,
+            "telefono" : data.telefono, 
+            "hora_apertura" : data.horario_inicio,
+            "hora_cierre" : data.horario_cierre,
+            "nick" : data.nombreUsuario,
+            "contrasena" : data.contraseña,
+            }}
+        console.log(state.form)
+        
+          await axios.post(baseUrl, state.form); 
+            
     }
 
     return <div className='contact'>
