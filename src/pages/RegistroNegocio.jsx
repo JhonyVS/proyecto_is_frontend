@@ -77,7 +77,7 @@ const RegistroNegocio = () => {
                         <label class="labelNeg">Logo del negocio</label>
                     </div>
                     <div class="column_logNeg">
-                        <input type='file' class="boxImagen2"{...register('imagenLogo',{
+                        <input type='file' class="boxImagen2" accept = "image/png, image/jpeg, image/jpg"{...register('imagenLogo',{
                             required: true,     
                         })}/>
                     </div>

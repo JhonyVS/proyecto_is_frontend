@@ -4,8 +4,24 @@ import React from 'react'
 // import {Link} from 'react-router-dom'
 import imagenFondo from '../assets/fondoComida.png';
 import '../styles/Home.css';
-
+import { useEffect } from 'react';
+import Cookies from 'universal-cookie';
 function Home() {
+    const cookies = new Cookies();
+    useEffect(() => {
+        if(cookies.get('token')){
+            let aux = document.getElementById("cerrarsesion")
+  let pos = document.getElementById("iniciarsesion")
+  let aux2 = document.getElementById("cerrarsesion2")
+  let pos2 = document.getElementById("iniciarsesion2")
+  aux.style.display="flex";
+  aux2.style.display="flex";
+  pos.style.display="none" ;
+  pos2.style.display="none";
+          }
+            
+          
+      });
   return (<Container>
     <div className = "home" style={{ backgroundImage: `url(${imagenFondo})`}}>
         <div className='headerContainer' >
@@ -16,6 +32,8 @@ function Home() {
             </Row>
             <Row>
                 <p>Solo promociones</p>
+            </Row>
+            <Row>
                 <a href='/promociones'>
                     <button>VER PROMOCIONES</button>
                 </a>
