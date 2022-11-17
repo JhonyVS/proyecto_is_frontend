@@ -96,7 +96,7 @@ componentDidMount(){
                 <div >
                 <h2 class="tituloIni">Iniciar Sesión</h2>
                   
-                  <img src={logo} width="150px"  alt="User Icon" />
+                  <img src={logo} width="100px"  alt="User Icon" />
                   <br /><br />
                 </div>
 
