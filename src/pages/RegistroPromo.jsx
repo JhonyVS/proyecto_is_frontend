@@ -3,18 +3,41 @@ import imgLeft from '../assets/regneg_left.png'
 import { useForm } from 'react-hook-form';
 import {useNavigate} from 'react-router-dom'
 import '../styles/RegistroPromo.css'
+import axios from 'axios';           
 
+import Cookies from 'universal-cookie';
 
+const baseUrl = `${process.env.React_APP_API}/api/registro/producto`;   
+let targeta = 'comida rapida';
 function RegistroPromo() {
+    const cookies = new Cookies();
     const {register, formState:{errors}, handleSubmit} = useForm();
     const history = useNavigate()
-
-
-    const onSubmit = async (data) => {
-        console.log(data);
-        console.log(data.nombre);    
+    const selectProduct=(event)=>{
+        targeta = event.target.value;
     }
 
+    const onSubmit = async (data) => {
+         let state ={form:{
+            "producto_descripcion" : data.producto_descripcion,
+            "producto_nombre" : data.producto_nombre,
+            "producto_categoria" : targeta,
+            "promocion_descuento" : data.precio_descuento,
+            "promocion_fecha_inicio" : data.promocion_fecha_inicio,
+            "promocion_fecha_fin" : data.promocion_fecha_fin, 
+            "promocion_hora_inicio" : data.promocion_hora_inicio,
+            "promocion_hora_fin" : data.promocion_hora_fin,
+            "negocio_id" : cookies.get('id'),
+            "producto_precio" : data.precio_original,
+            "photo" : data.imagen_producto[0],
+            }}
+        console.log(state.form)
+        await axios.post(baseUrl, state.form, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+        });   
+    }
     
   
     
@@ -140,7 +163,7 @@ function RegistroPromo() {
                     <label class="labelPromo">Categoría</label>
                 </div>
                 <div class="column60">
-                    <select class="categ_opcion">
+                    <select class="categ_opcion" onChange={selectProduct}>
                         <option value='comida rapida'>Comida Rápida</option>
                         <option value='bebida'>Bebida</option>
                         <option value='postre'>Postre</option>

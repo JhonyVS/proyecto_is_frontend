@@ -57,9 +57,8 @@ iniciarSesion=()=>{
         console.log(response); 
         //aumentar uhn status para controlar que tiene que devolver si o si en todos con 
         if(response.data.status === true){
-          
-              cookies.set('id', response.usuario_id, {path: "/"});
-              cookies.set('token', response.token, {path: "/"}); 
+              cookies.set('id', response.data.usuario_id, {path: "/"});
+              cookies.set('token', response.data.token, {path: "/"}); 
               window.location.href="/";
         }else{alert('El usuario o la contraseña son incorrectos');}
     })
