@@ -30,7 +30,16 @@ const RegistroNegocio = () => {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
-        }); 
+        })
+        .then(response => {
+            if(response.status === 200){
+                alert('Se registro correctamente');
+                window.location.href="/";
+            }
+        })
+        .catch(function (error) {
+            alert("El usuario ya fue registrado");
+          });
             
     }
 
