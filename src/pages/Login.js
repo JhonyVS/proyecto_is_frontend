@@ -59,6 +59,7 @@ iniciarSesion=()=>{
         if(response.data.status === true){
               cookies.set('id', response.data.usuario_id, {path: "/"});
               cookies.set('token', response.data.token, {path: "/"}); 
+              cookies.set('negocio', response.data.negocio_id, {path: "/"}); 
               window.location.href="/";
         }else{alert('El usuario o la contraseña son incorrectos');}
     })
