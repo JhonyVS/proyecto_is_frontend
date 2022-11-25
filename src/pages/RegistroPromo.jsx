@@ -5,14 +5,29 @@ import {useNavigate} from 'react-router-dom'
 import '../styles/RegistroPromo.css'
 import axios from 'axios';
 
-
-
 const baseUrl = `${process.env.React_APP_API}/api/registro/producto`;
- 
+
 const RegistroPromo = () =>{
  const {register, formState:{errors}, handleSubmit} = useForm();
  const history = useNavigate()
+
+ const tiempoTranscurrido = Date.now();
+ const today = new Date(tiempoTranscurrido);
  
+
+ function formatoFecha(fecha, formato) {
+    const map = {
+        dd: fecha.getDate(),
+        mm: fecha.getMonth() + 1,
+        yyyy: fecha.getFullYear()
+    }
+
+    return formato.replace(/dd|mm|yyyy/gi, matched => map[matched])
+}
+
+
+
+
  const onSubmit = async (data) => {
     let state ={
         form:{
@@ -50,7 +65,8 @@ const RegistroPromo = () =>{
                     <label class="labelPromo">Nombre del Producto</label>
                 </div>
                 <div class="column60">
-                    <input type="text" class="input_form" {...register('producto_nombre',{
+                    <input type="text" class="input_form"  {...register('producto_nombre',{
+                        
                         required: true,
                         maxLength: 64,
                         minLength: 4,
@@ -128,7 +144,7 @@ const RegistroPromo = () =>{
                 <div class="column40">
                     {errors.producto_descripcion?.type === 'required' && <span class="mensajeError">Se debe ingresar una descripción</span>}
                     {errors.producto_descripcion?.type === 'minLength' && <span class="mensajeError">Debe tener mas de 8 caracteres</span>}
-                    {errors.producto_descripcion?.type === 'maxLength' && <span class="mensajeError">Debe tener menos de 64 caracteres</span>}
+                    {errors.producto_descripcion?.type === 'maxLength' && <span class="mensajeError">Debe tener menos de 128 caracteres</span>}
                     {errors.producto_descripcion?.type === 'pattern' && <span class="mensajeError">Solo permiten números y letras.</span>}
                 </div>
             </div>
@@ -173,15 +189,16 @@ const RegistroPromo = () =>{
                     <label class="labelPromo">Inicio de la Promoción</label>
                 </div>
                 <div class="column15a">
-                    <input type="date" class="input_fecha" {...register('promocion_fecha_inicio',{
-                        required: true
-                    })}/>
+                    <input type="date" class="input_fecha" min={formatoFecha(today, "yyyy-mm-dd")} {...register('promocion_fecha_inicio',{
+                        required: true,
+                    })} />
+                    
                 </div>
                 <div class="column25a">
                     <label class="labelPromo">Fin de la Promoción</label>
                 </div>
                 <div class="column15a">
-                    <input type="date" class="input_fecha" {...register('promocion_fecha_fin',{
+                    <input type="date" class="input_fecha" min={formatoFecha(today, "yyyy-mm-dd")} {...register('promocion_fecha_fin',{
                         required: true
                     })}/>
                 </div>   
@@ -201,7 +218,7 @@ const RegistroPromo = () =>{
                     <label class="labelPromo">Hora de Inicio</label>
                 </div>
                 <div class="column15b">
-                    <input type="time" class="input_hora" {...register('promocion_hora_inicio',{
+                    <input type="time" class="input_hora"  {...register('promocion_hora_inicio',{
                         required: true
                     })}/>
                 </div>
