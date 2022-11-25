@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import axios from 'axios'
 
 const base =process.env.React_APP_API
@@ -11,18 +10,15 @@ export async function getDetProducto () {
             method: 'GET'
         })
         return respuesta
-    }catch (e){
-        console.log(e)
+    }catch (error){
+        console.log(error)
     }
 }
-
 
 //fetch('https://localhost:8000/api/producto/<id-producto>')
 //  .then( res => res.json)
 //  .then(data =>){
 //} 
-=======
-import axios from 'axios';
 const baseUrl = '${process.env.React_APP_API}';
 
 
@@ -66,4 +62,3 @@ export async function guardarNegocio(negocioData){
         console.log(error)
     }
 }
->>>>>>> origin/marco

@@ -85,7 +85,7 @@ function DetallesPromo() {
             
             <div class="">
                 <div class="btnDetPromo">
-                    <button style={{backgroundImage: `url(${imgLeft})`}} className='formulario__btnPromo' onClick={()=> history(-1)}>Volver</button>
+                    <button  className='formulario__btnPromo' onClick={()=> history(-1)}>Volver</button>
                 </div>
             </div>
        

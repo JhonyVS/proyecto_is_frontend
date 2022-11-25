@@ -10,6 +10,8 @@ import RegistroPromo from './pages/RegistroPromo';
 
 import Login from './pages/Login';
 
+import DetallesPromo from './pages/DetallesPromo';
+
 function App() {
 
   return (
