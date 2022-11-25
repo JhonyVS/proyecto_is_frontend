@@ -18,7 +18,7 @@ function Promociones() {
                     precioDescuento={promoItem.precioDescuento} 
                     />
                 );
-
+ 
             })}
         </div>
     </div>
