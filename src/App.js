@@ -22,6 +22,8 @@ function App() {
           <Route exact path='/promociones' element={<Promociones/>} />
           <Route exact path='/registrarNegocio' element={<RegistroNegocio/>} />
           <Route exact path='/registrarPromocion' element={<RegistroPromo/>} />
+          <Route exact path='/detallesPromocion' element={<DetallesPromo/>} />
+        
         </Routes>
         <Footer/>
       </Router>
