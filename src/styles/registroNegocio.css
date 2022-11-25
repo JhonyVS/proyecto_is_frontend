@@ -194,7 +194,7 @@
   float: left;
   width: 32.5%;
   padding: 1%;
-  height: 20px; /* Should be removed. Only for demonstration */
+  height: 20px;
 }
 
 .column_horaNegocio {
@@ -242,7 +242,7 @@
   float: left;
   width: 22.5%;
   padding: 1%;
-  height: 20px; /* Should be removed. Only for demonstration */
+  height: 20px; 
 }
 
 .column_numUsuInput {
@@ -262,7 +262,7 @@
   float: left;
   width: 22.5%;
   padding: 1%;
-  height: 20px; /* Should be removed. Only for demonstration */
+  height: 20px; 
 }
 
 .column_password {
@@ -359,7 +359,6 @@
   transition: .3s ease all; 
 }
 
-    top: 0;
 .input_formDoble:focus{
   border: 3px solid #0971f1;
   outline: none;
