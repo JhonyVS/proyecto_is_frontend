@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 const base =process.env.React_APP_API
-const id =1
 
 export async function getDetProducto () {
     try {
@@ -15,10 +14,6 @@ export async function getDetProducto () {
     }
 }
 
-//fetch('https://localhost:8000/api/producto/<id-producto>')
-//  .then( res => res.json)
-//  .then(data =>){
-//} 
 const baseUrl = '${process.env.React_APP_API}';
 
 
