@@ -16,7 +16,10 @@
   }
 
   @media only screen and (max-width: 900px) {
-    .footer{min-width: 44.8vh;}
+    .footer{
+      min-width: 44.8vh;
+      padding-top: 100px;
+    }
   }
   
   @media only screen and (max-width: 600px) {
