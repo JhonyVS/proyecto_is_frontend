@@ -1,13 +1,17 @@
+ body{
+    background: url('../assets/fondoComida.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
 .home {
     width: 100%;
-    height: 76.6vh;
+    height: 84.5vh;
     display: flex;
     justify-content: center;
     align-items: left;
     flex-direction: column;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     text-align: justify;
   }
