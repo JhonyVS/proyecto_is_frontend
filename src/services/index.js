@@ -1,5 +1,19 @@
 import axios from 'axios';
+
 const baseUrl = '${process.env.React_APP_API}';
+
+
+export async function getDetProducto () {
+    try {
+        const respuesta = await axios({
+            url: `${base}/api/producto/1`,
+            method: 'GET'
+        })
+        return respuesta
+    }catch (error){
+        console.log(error)
+    }
+}
 
 
 export async function getCategorias(){
