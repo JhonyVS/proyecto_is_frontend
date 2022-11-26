@@ -3,21 +3,56 @@ import imgLeft from '../assets/regneg_left.png'
 import { useForm } from 'react-hook-form';
 import {useNavigate} from 'react-router-dom'
 import '../styles/RegistroPromo.css'
+import axios from 'axios';
+
+const baseUrl = `${process.env.React_APP_API}/api/registro/producto`;
 
 
-function RegistroPromo() {
-    const {register, formState:{errors}, handleSubmit} = useForm();
-    const history = useNavigate()
+const RegistroPromo = () =>{
+ const {register, formState:{errors}, handleSubmit} = useForm();
+ const history = useNavigate()
 
+ const tiempoTranscurrido = Date.now();
+ const today = new Date(tiempoTranscurrido);
+ 
 
-    const onSubmit = async (data) => {
-        console.log(data);
-        console.log(data.nombre);    
+ function formatoFecha(fecha, formato) {
+    const map = {
+        dd: fecha.getDate(),
+        mm: fecha.getMonth() + 1,
+        yyyy: fecha.getFullYear()
     }
 
+    return formato.replace(/dd|mm|yyyy/gi, matched => map[matched])
+}
+
+
+
+
+ const onSubmit = async (data) => {
+    let state ={
+        form:{
+            "producto_nombre" : data.producto_nombre,
+            "producto_precio" : data.precio_original,
+            "promocion_descuento" : data.precio_descuento,
+            "producto_descripcion" : data.producto_descripcion,
+            "photo" : data.imagen_producto[0],
+            "producto_categoria" : data.categ_option, 
+            "promocion_fecha_inicio" : data.promocion_fecha_inicio,
+            "promocion_fecha_fin" : data.promocion_fecha_fin,
+            "promocion_hora_inicio" : data.promocion_hora_inicio,
+            "promocion_hora_fin" : data.promocion_hora_fin,
+        }
+    } 
+    console.log(state.form)
+        await axios.post(baseUrl, state.form, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+        }); 
+ }   
     
-  
-    
+            
     return <div className='contact'>
         <div 
             className='leftSide'
@@ -31,7 +66,8 @@ function RegistroPromo() {
                     <label class="labelPromo">Nombre del Producto</label>
                 </div>
                 <div class="column60">
-                    <input type="text" class="input_form" {...register('producto_nombre',{
+                    <input type="text" class="input_form"  {...register('producto_nombre',{
+                        
                         required: true,
                         maxLength: 64,
                         minLength: 4,
@@ -109,7 +145,7 @@ function RegistroPromo() {
                 <div class="column40">
                     {errors.producto_descripcion?.type === 'required' && <span class="mensajeError">Se debe ingresar una descripción</span>}
                     {errors.producto_descripcion?.type === 'minLength' && <span class="mensajeError">Debe tener mas de 8 caracteres</span>}
-                    {errors.producto_descripcion?.type === 'maxLength' && <span class="mensajeError">Debe tener menos de 64 caracteres</span>}
+                    {errors.producto_descripcion?.type === 'maxLength' && <span class="mensajeError">Debe tener menos de 128 caracteres</span>}
                     {errors.producto_descripcion?.type === 'pattern' && <span class="mensajeError">Solo permiten números y letras.</span>}
                 </div>
             </div>
@@ -140,7 +176,7 @@ function RegistroPromo() {
                     <label class="labelPromo">Categoría</label>
                 </div>
                 <div class="column60">
-                    <select class="categ_opcion">
+                    <select class="categ_opcion" {...register('categ_option')}>
                         <option value='comida rapida'>Comida Rápida</option>
                         <option value='bebida'>Bebida</option>
                         <option value='postre'>Postre</option>
@@ -154,15 +190,16 @@ function RegistroPromo() {
                     <label class="labelPromo">Inicio de la Promoción</label>
                 </div>
                 <div class="column15a">
-                    <input type="date" class="input_fecha" {...register('promocion_fecha_inicio',{
-                        required: true
-                    })}/>
+                    <input type="date" class="input_fecha" min={formatoFecha(today, "yyyy-mm-dd")} {...register('promocion_fecha_inicio',{
+                        required: true,
+                    })} />
+                    
                 </div>
                 <div class="column25a">
                     <label class="labelPromo">Fin de la Promoción</label>
                 </div>
                 <div class="column15a">
-                    <input type="date" class="input_fecha" {...register('promocion_fecha_fin',{
+                    <input type="date" class="input_fecha" min={formatoFecha(today, "yyyy-mm-dd")} {...register('promocion_fecha_fin',{
                         required: true
                     })}/>
                 </div>   
@@ -182,7 +219,7 @@ function RegistroPromo() {
                     <label class="labelPromo">Hora de Inicio</label>
                 </div>
                 <div class="column15b">
-                    <input type="time" class="input_hora" {...register('promocion_hora_inicio',{
+                    <input type="time" class="input_hora"  {...register('promocion_hora_inicio',{
                         required: true
                     })}/>
                 </div>
@@ -216,5 +253,7 @@ function RegistroPromo() {
         </form>
         </div>
     </div>
+    
 }
+
 export default RegistroPromo
