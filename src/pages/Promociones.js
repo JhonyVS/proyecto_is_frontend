@@ -5,6 +5,7 @@ import '../styles/Promociones.css'
 import AlitasMostaza from '../assets/promociones/alitasMostasa.jpg';
 import axios from "axios";
 
+
 const baseUrl = `${process.env.React_APP_API}/api/destacados`;
 const catURL = `${process.env.React_APP_API}/api/categorias`;
 
@@ -44,20 +45,68 @@ const [catSel, setCatSel] = useState();
   console.log(products)
   console.log(categorias)
 
+if (catSel == 'Todos'){
+  return (
+    <div className='menu'>
+        <h1 className='menuTile'>Promociones disponibles</h1>
+
+    <div class="row">
+      <div className='leftTexto'>
+        <div className='labelTexto'>Buscar por categoria: </div>
+      </div>
+      <div className='rightSelectBox'>
+        <select className='categ_option'  onChange={e=>setCatSel(e.target.value)} >
+          <option>Todos</option>
+            {categorias.map((cats) => (
+                <option key={cats.categoria} value={cats.categoria}>
+                  {cats.categoria}
+                </option>
+            ))}
+        </select>
+      </div>
+    </div>
+
+        <div className="menuList">
+      
+        {products.map((product) => {
+          return(
+            <PromoItem 
+            key={product.producto_id} 
+            image = {AlitasMostaza}
+            name={product.nombre} 
+            precio={product.precio} 
+            precioDescuento={product.descuento} />
+          );
+        })}
+
+        </div>
+    </div>
+  )
+}
+
 
   return (
     <div className='menu'>
         <h1 className='menuTile'>Promociones disponibles</h1>
 
-      <select onChange={e=>setCatSel(e.target.value)}>
-        <option>Seleccione una opcion</option>
-          {categorias.map((cats) => (
-              <option key={cats.categoria} value={cats.categoria}>
-                {cats.categoria}
-              </option>
-          ))}
-      </select>
+    <div class="row">
+      <div className='leftTexto'>
+        <div className='labelTexto'>Buscar por categoria: </div>
+      </div>
+      <div className='rightSelectBox'>
+        <select className='categ_option'  onChange={e=>setCatSel(e.target.value)} >
+          <option>Todos</option>
+            {categorias.map((cats) => (
+                <option key={cats.categoria} value={cats.categoria}>
+                  {cats.categoria}
+                </option>
+            ))}
+        </select>
+      </div>
+    </div>
+
         <div className="menuList">
+
         {products.filter(prod => prod.categoria === catSel).map((product) => {
           return(
             <PromoItem 
@@ -68,10 +117,45 @@ const [catSel, setCatSel] = useState();
             precioDescuento={product.descuento} />
           );
         })}
+        
+        {/* {products.map((product) => {
+          return(
+            <PromoItem 
+            key={product.producto_id} 
+            image = {AlitasMostaza}
+            name={product.nombre} 
+            precio={product.precio} 
+            precioDescuento={product.descuento} />
+          );
+        })} */}
+
         </div>
     </div>
   )
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 export default Promociones

@@ -48,6 +48,83 @@
     margin-left: 20px;
   }
   
+/*
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .texto {
+    float: left;
+    width: 35%;
+    height: 20px; 
+  }
+
+  .selectBox {
+    float: left;
+    width: 60%;
+    height: 20px; 
+  }
+
+  .labelTexto{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    width:100%;
+    margin-left: -75%;
+  }
+
+  .categ_option{
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    display: flex;
+    cursor: pointer;
+    width: 150%;
+    height: 30px;
+    background: #fff;
+    border: 2px solid;
+    border-radius: 1px;
+    transition: .3s ease all;
+  }
+
+*/
+
+.row {
+  display: flex;
+  background: rgb(255, 255, 255);
+
+}
+
+
+
+.categ_option{
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  display: flex;
+  cursor: pointer;
+  width: 150%;
+  height: 30px;
+  background: #fff;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: .3s ease all;
+  font-size: 1.1em;
+}
+
+.labelTexto{
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  width: 250%;
+  text-align: left;
+  height: 10px;
+ 
+}
+
+
   @media only screen and (max-width: 1300px) {
     .menuList {
       grid-template-columns: 1fr 1fr;
@@ -59,3 +136,5 @@
       grid-template-columns: 1fr;
     }
   }
+
+  
