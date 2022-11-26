@@ -106,22 +106,6 @@ if (catSel == 'Todos'){
     </div>
 
         <div className="menuList">
-<<<<<<< HEAD
-            {MenuList.map((promoItem, key) => {
-              return(
-                products.map((product) => (
-                  <PromoItem 
-                    key={product.producto_id} 
-                    image = {AlitasMostaza}
-                    name={product.nombre} 
-                    precio={product.precio} 
-                    recioDescuento={product.descuento} />
-                  ))
-              );
-
-            })}
-            
-=======
 
         {products.filter(prod => prod.categoria === catSel).map((product) => {
           return(
@@ -145,34 +129,10 @@ if (catSel == 'Todos'){
           );
         })} */}
 
->>>>>>> 63d1581049e41fabf9ad5f9929572f3053eabaf2
         </div>
     </div>
   )
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 export default Promociones
