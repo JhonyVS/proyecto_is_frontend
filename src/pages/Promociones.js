@@ -32,18 +32,19 @@ function Promociones() {
         <h1 className='menuTile'>Promociones disponibles</h1>
         <div className="menuList">
             {MenuList.map((promoItem, key) => {
-                return(
-                  products.map((product) => (
-                    <PromoItem 
-                          key={product.producto_id} 
-                          image = {AlitasMostaza}
-                          name={product.nombre} 
-                          precio={product.precio} 
-                          precioDescuento={product.descuento} />
+              return(
+                products.map((product) => (
+                  <PromoItem 
+                    key={product.producto_id} 
+                    image = {AlitasMostaza}
+                    name={product.nombre} 
+                    precio={product.precio} 
+                    recioDescuento={product.descuento} />
                   ))
-                );
+              );
 
             })}
+            
         </div>
     </div>
   )

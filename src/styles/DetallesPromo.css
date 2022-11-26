@@ -78,7 +78,7 @@
     height: 50%;
   }
   .contact .rightSide {
-    height: 67%;
+    height: 70%;
     justify-content: stretch;
   }
 }
@@ -92,15 +92,17 @@
 
   
 .btnDetPromo{
-  text-align:center;
-  height: 0px;
-  width: 80%;
   background: #121619;
   color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: .1s ease all;
+  width: 100%;
+  height: min-content;
+  font-size: 15px;
+  border-radius: 7px;
+  text-align: center;
 }
+
+
+
 
 .datos{
   display:flex;

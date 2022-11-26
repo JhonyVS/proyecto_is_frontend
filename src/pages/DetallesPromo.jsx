@@ -1,38 +1,23 @@
 import React from 'react'
-import imgLeft from '../assets/regneg_left.png'
+import imgLeft from '../assets/promociones/alitasMostasa.jpg'
 import '../styles/DetallesPromo.css'
 import {useNavigate} from 'react-router-dom'
-
 import axios from 'axios'
 import { useEffect  , useState} from 'react'
 
-const id =3
-const API = 'http://localhost:8000/api/producto/1`'
+
+
+const id=1
+
 const baseUrl = `${process.env.React_APP_API}/api/producto/${id}`
 
+
 function DetallesPromo() {
-        
     
-    //const history1 = useNavigate()
     
-    //fetch(API)
-    // .then(response => response.json())
-    // .then(data => mostrarData(data))
-    // .catch(error => console.log(error))
-
-    //function mostrarData(data)  {
-        //console.log(data)
-        //const h3 = document.createElement("h3");
-        //    h3.textContent = data[0].nombre
-        //const div =document.createElement('div')
-        //   div.appendChild(h3);
-
-        //row.appendChild(div)
-    //}
-    //mostrarData()
     const [productos, setProductos]= useState([]);
     const obtenerDetProducto = async()=>{
-        await axios.get(API)
+        await axios.get(baseUrl)
         .then(response=>{
            setProductos(response.data)
         }).catch(error=>{
@@ -52,12 +37,11 @@ function DetallesPromo() {
             style={{backgroundImage: `url(${imgLeft})`}}
            
         >
-            {/* {productos && productos.map((producto)=>(
-            <tr key={(producto.nombre)}>
-                <td class="tituloDetPromo">{(producto.nombre)}</td>
+            {productos && productos.map((producto)=>(
+            <tr key={(producto.id)}>
+                <td class="">{(producto.image)}</td>
             </tr>
-
-        ))} */}
+            ))}
         </div>
      
 
@@ -173,8 +157,8 @@ function DetallesPromo() {
             </div>
 
             <div class="">
-                <div class="btnDetPromo">
-                    <button className='formulario__btnPromo' onClick={()=> history(-1)}>Volver</button>
+                <div class="btnDetPromo" >
+                    <button className='btnDetPromo' onClick={()=> history(-1)}>Volver</button>
                 </div>
             </div>
         </div>
