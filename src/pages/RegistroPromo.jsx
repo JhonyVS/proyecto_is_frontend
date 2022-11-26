@@ -7,7 +7,6 @@ import axios from 'axios';
 
 const baseUrl = `${process.env.React_APP_API}/api/registro/producto`;
 
-
 const RegistroPromo = () =>{
  const {register, formState:{errors}, handleSubmit} = useForm();
  const history = useNavigate()
