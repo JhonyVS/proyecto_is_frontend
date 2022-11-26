@@ -57,9 +57,9 @@ iniciarSesion=()=>{
         console.log(response); 
         //aumentar uhn status para controlar que tiene que devolver si o si en todos con 
         if(response.data.status === true){
-          
-              cookies.set('id', response.usuario_id, {path: "/"});
-              cookies.set('token', response.token, {path: "/"}); 
+              cookies.set('id', response.data.usuario_id, {path: "/"});
+              cookies.set('token', response.data.token, {path: "/"}); 
+              cookies.set('negocio', response.data.negocio_id, {path: "/"}); 
               window.location.href="/";
         }else{alert('El usuario o la contraseña son incorrectos');}
     })
@@ -96,7 +96,7 @@ componentDidMount(){
                 <div >
                 <h2 class="tituloIni">Iniciar Sesión</h2>
                   
-                  <img src={logo} width="150px"  alt="User Icon" />
+                  <img src={logo} width="100px"  alt="User Icon" />
                   <br /><br />
                 </div>
 
