@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Promociones from './pages/Promociones';
 import RegistroNegocio from './pages/RegistroNegocio';
 import RegistroPromo from './pages/RegistroPromo';
+import DetallesPromo from './pages/DetallesPromo';
 
 import Login from './pages/Login';
 
@@ -25,12 +26,10 @@ function App() {
           <Route exact path='/registrarNegocio' element={<RegistroNegocio/>} />
           <Route exact path='/registrarPromocion' element={<RegistroPromo/>} />
           <Route exact path='/detallesPromocion' element={<DetallesPromo/>} />
-        
         </Routes>
         <Footer/>
       </Router>
     </div>
   );
 }
-
 export default App;

@@ -2,7 +2,6 @@
 import { Container, Row, Col } from 'react-grid-system';
 import React from 'react'
 // import {Link} from 'react-router-dom'
-import imagenFondo from '../assets/fondoComida.png';
 import '../styles/Home.css';
 import { useEffect } from 'react';
 import Cookies from 'universal-cookie';
@@ -22,8 +21,9 @@ function Home() {
             
           
       });
-  return (<Container>
-    <div className = "home" style={{ backgroundImage: `url(${imagenFondo})`}}>
+  return (<Container >
+    <div className = "home" >
+    
         <div className='headerContainer' >
             <Row>
                 <Col>
