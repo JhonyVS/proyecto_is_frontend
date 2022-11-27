@@ -3,19 +3,35 @@ import {useNavigate} from 'react-router-dom'
 import { useForm } from 'react-hook-form';
 import imgLeft from '../assets/negocio.jpg'
 import '../styles/registroNegocio.css'
-            
-    
-
+import axios from 'axios';           
+const baseUrl = `${process.env.React_APP_API}/api/registro/negocio`;   
 
 const RegistroNegocio = () => {
+  
     const {register, formState:{errors}, handleSubmit} = useForm();
     const history = useNavigate()
     //Aqui se tiene toda la informacion del formulario en data
     //Desde aqui no entiendo bien como puedo hacer el post
     const onSubmit = async (data) => {
-        console.log(data);
-        console.log(data.nombre);
-    
+        let state ={form:{
+            "nombre_negocio" : data.nombre,
+            "nombre_propietario" : data.nombrePropietario,
+            "logo" : data.imagenLogo[0],
+            "ubicacion" : data.ubicacion,
+            "descrip" : data.descripcion,
+            "telefono" : data.telefono, 
+            "hora_apertura" : data.horario_inicio,
+            "hora_cierre" : data.horario_cierre,
+            "nick" : data.nombreUsuario,
+            "contrasena" : data.contraseña,
+            }}
+        console.log(state.form)
+        await axios.post(baseUrl, state.form, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+        }); 
+            
     }
 
     return <div className='contact'>
@@ -36,7 +52,7 @@ const RegistroNegocio = () => {
                             required: true,
                             maxLength: 64,
                             minLength: 4,
-                            pattern: /^[A-Za-z0-9ñáéíóúÁÉÍÓÚ\s]+$/g
+                            pattern: /^[A-Za-z0-9ñáéíóúÁÉÍÓÚ]+$/g
                             
                         })}/>
                     </div>
@@ -57,7 +73,7 @@ const RegistroNegocio = () => {
                     <div class="column_nomProp">
                         <input type="text" class="input_formNeg"{...register('nombrePropietario',{
                             required: true,
-                            pattern: /^[A-Za-zñáéíóúÁÉÍÓÚ\s]+$/g,
+                            pattern: /^[A-Za-zñáéíóúÁÉÍÓÚ]+$/g,
                             maxLength: 64,
                             minLength: 4                  
                         })}/>
@@ -179,7 +195,7 @@ const RegistroNegocio = () => {
                     <div class="column_numUsuInput">
                         <input type="text" class="input_formDoble"{...register('nombreUsuario', {
                             required: true,
-                            pattern: /^[A-Za-z0-9ñáéíóúÁÉÍÓÚ\s]+$/g,
+                            pattern: /^[A-Za-z0-9ñ]+$/g,
                             maxLength: 32,
                             minLength: 8                      
                         })}/>
