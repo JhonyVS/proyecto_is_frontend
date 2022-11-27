@@ -1,20 +1,23 @@
-import React, {useEffect,useState} from 'react'
-import {MenuList} from '../helpers/MenuList'
+import React, {useEffect,useState,useRef} from 'react'
 import PromoItem from '../components/PromoItem'
 import '../styles/Promociones.css'
 import AlitasMostaza from '../assets/promociones/alitasMostasa.jpg';
 import axios from "axios";
+import "../styles/buscar.css";
+import { FiSearch } from "react-icons/fi";
 
 
 const baseUrl = `${process.env.React_APP_API}/api/destacados`;
 const catURL = `${process.env.React_APP_API}/api/categorias`;
+const buscarURL = `${process.env.React_APP_API}/api/producto/filtro`;
 
 
 function Promociones() {
 
-
 const[products, setProducts] = useState([])
 const[categorias, setCategorias] = useState([]);
+
+
 
 useEffect(() => {
   axios
@@ -38,14 +41,15 @@ useEffect(() => {
 
 
 const [catSel, setCatSel] = useState();
-
+const ref = useRef();
+const [active, setActive] = useState(false);/**aaaaa */
 
   console.log(catSel)
 
   console.log(products)
   console.log(categorias)
 
-if (catSel == 'Todos'){
+if (catSel === 'Todos'){
   return (
     <div className='menu'>
         <h1 className='menuTile'>Promociones disponibles</h1>
@@ -66,7 +70,7 @@ if (catSel == 'Todos'){
       </div>
     </div>
 
-        <div className="menuList">
+      <div className="menuList">
       
         {products.map((product) => {
           return(
@@ -86,8 +90,25 @@ if (catSel == 'Todos'){
 
 
   return (
+  
+    
+
     <div className='menu'>
         <h1 className='menuTile'>Promociones disponibles</h1>
+        <div className="buscar">
+      <div id="cont">
+        <button onClick={() => ref.current.focus()}>
+          <FiSearch />
+        </button>
+        <input
+          ref={ref}
+          placeholder="buscar"
+          onFocus={() => setActive(true)}
+          onBlur={() => setActive(false)}
+        />
+       </div>
+        <p></p>
+      </div>
 
     <div class="row">
       <div className='leftTexto'>
@@ -130,30 +151,13 @@ if (catSel == 'Todos'){
         })} */}
 
         </div>
+
+
     </div>
-  )
     
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  )
 
 
 }
