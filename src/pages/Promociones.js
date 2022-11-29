@@ -17,6 +17,8 @@ function Promociones() {
 const[products, setProducts] = useState([])
 const[categorias, setCategorias] = useState([]);
 
+const[productos, setProductos] = useState([])
+
 
 
 useEffect(() => {
@@ -34,9 +36,19 @@ useEffect(() => {
   .then(res =>{
   console.log(res.data)
   setCategorias(res.data)
-}).catch(err => {
-  console.log(err)
-}) 
+  }).catch(err => {
+    console.log(err)
+  }) 
+
+  axios
+    .get(buscarURL)
+    .then(res =>{
+    console.log(res.data)
+    setProductos(res.data)
+  }).catch(err => {
+    console.log(err)
+  }) 
+
 },[])
 
 
@@ -48,6 +60,8 @@ const [active, setActive] = useState(false);/**aaaaa */
 
   console.log(products)
   console.log(categorias)
+
+  console.log(productos)
 
 if (catSel === 'Todos'){
   return (
@@ -95,6 +109,7 @@ if (catSel === 'Todos'){
 
     <div className='menu'>
         <h1 className='menuTile'>Promociones disponibles</h1>
+        
         <div className="buscar">
       <div id="cont">
         <button onClick={() => ref.current.focus()}>
@@ -105,10 +120,31 @@ if (catSel === 'Todos'){
           placeholder="buscar"
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
+          onChange={event => {this.setState({query: event.target.value})}}
+                onKeyPress={event => {
+                if (event.key === 'Enter') {
+                  <div className="menuList">
+      
+                       {productos.map((product) => {
+                    return(
+                      <PromoItem 
+                        key={product.producto_id} 
+                        image = {AlitasMostaza}
+                        name={product.nombre} 
+                        precio={product.precio} 
+                        precioDescuento={product.descuento} />
+                      );
+                    })}
+
+                  </div>
+                }
+              }
+            }
         />
        </div>
-        <p></p>
+       <br/>
       </div>
+      
 
     <div class="row">
       <div className='leftTexto'>
