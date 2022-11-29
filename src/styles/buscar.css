@@ -1,6 +1,9 @@
 .buscar {
     font-family: 'Inter', sans-serif;
     text-align: right;
+    margin-right: 10%;
+    margin-bottom: 25px;
+    width: 100%;
   }
   
   #cont {
