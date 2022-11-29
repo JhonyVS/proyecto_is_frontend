@@ -142,7 +142,6 @@ if (catSel === 'Todos'){
             }
         />
        </div>
-       <br/>
       </div>
       
 
