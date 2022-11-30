@@ -30,10 +30,10 @@ function DetallesPromo() {
     })
 
     const history = useNavigate()
-    return <div className='contact'>
+    return <div className='contactVer'>
          
         <div 
-            className='leftSide'
+            className='leftSide1'
             style={{backgroundImage: `url(${imgLeft})`}}
            
         >
@@ -45,10 +45,10 @@ function DetallesPromo() {
         </div>
      
 
-        <div className='rightSide'>
+        <div className='rightSide1'>
         
     
-        <h2 class="row1">
+        <h2 class="row2">
         {productos && productos.map((producto)=>(
             <tr key={(producto.id)}>
                 <td class="tituloDetPromo">{(producto.nombre)}</td>
@@ -56,102 +56,102 @@ function DetallesPromo() {
 
             ))}
         </h2>
-           <div class="row">
-                <div class="column25">
-                    <label class="labelPromo">Precio sin descuento: </label>
+           <div class="row1">
+                <div class="columnVer">
+                    <label class="labelDetPromo">Precio sin descuento: </label>
                 
                 </div>
                 {productos && productos.map((producto)=>(
                 <tr key={(producto.id)}>
-                    <td class="datos">{(producto.precio)}</td>
+                    <td class="datosDet">{(producto.precio)}</td>
                 </tr>
                 ))}
             </div>
             
-            <div class="row">
-                <div class="column25">
-                    <label class="labelPromo">Precio con descuento:</label>
+            <div class="row1">
+                <div class="columnVer">
+                    <label class="labelDetPromo">Precio con descuento:</label>
                 </div>
                 {productos && productos.map((producto)=>(
                 <tr key={(producto.id)}>
-                    <td class="datos">{(producto.descuento)}</td>
+                    <td class="datosDet">{(producto.descuento)}</td>
                 </tr>
                 ))}
             </div>
 
-            <div class="row">
-                <div class="column26">
-                    <label class="labelPromo">Descripcion:</label>
+            <div class="row1">
+                <div class="columnVer1">
+                    <label class="labelDetPromo">Descripcion:</label>
                 </div>
                 {productos && productos.map((producto)=>(
                 <tr key={(producto.id)}>
-                    <td class="datos">{(producto.descrip)}</td>
+                    <td class="datosDet">{(producto.descrip)}</td>
                 </tr>
                 ))}
             </div>
 
-            <div class="row">
-                <div class="column25">
-                    <label class="labelPromo">Categoria:</label>
+            <div class="row1">
+                <div class="columnVer">
+                    <label class="labelDetPromo">Categoria:</label>
                 </div>
                 {productos && productos.map((producto)=>(
                 <tr key={(producto.id)}>
-                    <td class="datos">{(producto.categoria)}</td>
+                    <td class="datosDet">{(producto.categoria)}</td>
                 </tr>
                 ))}
             </div>
 
-            <div class="row">
-                <div class="column25">
-                    <label class="labelPromo">Ubicacion:</label>
+            <div class="row1">
+                <div class="columnVer">
+                    <label class="labelDetPromo">Ubicacion:</label>
                 </div>
                 {productos && productos.map((producto)=>(
                 <tr key={(producto.id)}>
-                    <td class="datos">{(producto.ubicacion)}</td>
+                    <td class="datosDet">{(producto.ubicacion)}</td>
                 </tr>
                 ))}
             </div>
 
-            <div class="row">
-                <div class="column25">
-                    <label class="labelPromo">Inicio de la promocion:</label>
+            <div class="row1">
+                <div class="columnVer">
+                    <label class="labelDetPromo">Inicio de la promocion:</label>
                 </div>
                 {productos && productos.map((producto)=>(
                 <tr key={(producto.id)}>
-                    <td class="datos">{(producto.fecha_ini)}</td>
+                    <td class="datosDet">{(producto.fecha_ini)}</td>
                 </tr>
                 ))}
             </div>
 
-            <div class="row">
-                <div class="column25">
-                    <label class="labelPromo">Hora Inicio:</label>
+            <div class="row1">
+                <div class="columnVer">
+                    <label class="labelDetPromo">Hora Inicio:</label>
                 </div>
                 {productos && productos.map((producto)=>(
                 <tr key={(producto.id)}>
-                    <td class="datos">{(producto.hora_ini)}</td>
+                    <td class="datosDet">{(producto.hora_ini)}</td>
                 </tr>
                 ))}
             </div>
 
-            <div class="row">
-                <div class="column25">
-                    <label class="labelPromo">Fin de la promocion:</label>
+            <div class="row1">
+                <div class="columnVer">
+                    <label class="labelDetPromo">Fin de la promocion:</label>
                 </div>
                 {productos && productos.map((producto)=>(
                 <tr key={(producto.id)}>
-                    <td class="datos">{(producto.fecha_fin)}</td>
+                    <td class="datosDet">{(producto.fecha_fin)}</td>
                 </tr>
                 ))}
             </div>
 
-            <div class="row">
-                <div class="column25">
-                    <label class="labelPromo">Hora fin:</label>
+            <div class="row1">
+                <div class="columnVer">
+                    <label class="labelDetPromo">Hora fin:</label>
                 </div>
                 {productos && productos.map((producto)=>(
                 <tr key={(producto.id)}>
-                    <td class="datos">{(producto.hora_fin)}</td>
+                    <td class="datosDet">{(producto.hora_fin)}</td>
                 </tr>
                 ))}
             </div>
