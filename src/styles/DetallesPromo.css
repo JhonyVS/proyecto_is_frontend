@@ -60,6 +60,17 @@
   width: 38%;
   padding: 0%;
   height: 30px; 
+  padding-top: 1%;
+}
+
+.columnUbi {
+  text-align:left;
+  margin-right:0px;
+  float: left;
+  width: 38%;
+  padding: 0%;
+  height: 20px; 
+  padding-top: 1%;
 }
 
 @media only screen and (max-width: 1050px) {
@@ -97,9 +108,23 @@
   .columnVer1{
     height: 50px; 
   }
-
 }
 
+@media only screen and (max-width: 668px) {
+  .contactVer .rightSide1 {
+    height: 86%;
+    justify-content: stretch;
+  }
+  .columnUbi{
+    height: 35px;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  .contactVer .rightSide1 {
+    height: 92%;
+  }
+}
   
 .btnDetPromo{
   background: #000000;
@@ -132,3 +157,12 @@
   margin-top: 100px;
 }
 
+@media only screen and (max-width: 668px) {
+  .columnVer{
+    height: 35px; 
+  }
+  .datosDet{
+    margin-top: 5px;
+  }
+  
+}

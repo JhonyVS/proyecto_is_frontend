@@ -15,13 +15,26 @@
     color: white;
   }
 
+  @media only screen and (max-width: 1000px) {
+    .footer{
+      min-width: 44.8vh;
+      padding-top: 115px;
+    }
+  }
+
   @media only screen and (max-width: 900px) {
     .footer{
       min-width: 44.8vh;
-      padding-top: 100px;
     }
   }
   
   @media only screen and (max-width: 600px) {
     .footer{min-width: 44.8vh;}
+  }
+
+  @media only screen and (max-width: 668px) {
+    .footer{
+    padding-top: 210px;
+
+    }
   }

@@ -102,7 +102,7 @@ function DetallesPromo() {
             </div>
 
             <div class="row1">
-                <div class="columnVer">
+                <div class="columnUbi">
                     <label class="labelDetPromo">Ubicacion:</label>
                 </div>
                 {productos && productos.map((producto)=>(
