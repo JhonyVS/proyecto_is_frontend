@@ -1,17 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Logo from '../assets/logo.png';
-import '../styles/Navbar.css'
-import { HiOutlineMenu } from "react-icons/hi";
+import '../styles/Navbar.css';
 import Cookies from 'universal-cookie';
 import { Link } from 'react-router-dom';
 const cookies = new Cookies();
 // import ReorderIcon from '@mui/icons-material/Reorder';
 
 function Navbar() {
-    const [openLinks, setOpenLinks] = useState(false);
+    
 
     const toogleNavbar = () => {
-        setOpenLinks(!openLinks);
+        window.location.href='./';
     }
 
     const test2 = () => { 
@@ -31,8 +30,8 @@ function Navbar() {
   return (
     <div className="navbar">
         {/* <a className="text-white" href='/registrarNegocio'>fasdfsdafsdf</a> */}
-        <div className="leftSide" id={openLinks ? "open" : "close"}>
-            <img src={Logo} href='/' className='logo' />
+        <div className="leftSide" >
+            <img src={Logo}  className='logo' onClick={toogleNavbar}/>
         </div>
         <div className="rightSide">
             <Link to="/">Home</Link>
@@ -41,9 +40,6 @@ function Navbar() {
             <Link to="/registrarPromocion"id="cerrarsesion">Registrar Promocion</Link>
             <Link to="/"id="cerrarsesion2"onClick={test2}>Cerrar Sesion</Link>
             
-            <button onClick={toogleNavbar}>
-                <HiOutlineMenu/>
-            </button>
 
         </div>
     </div>
