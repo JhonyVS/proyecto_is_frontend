@@ -55,7 +55,7 @@ useEffect(() => {
     .then(function (res) {
       //handle success
       setData(res.data);
-      console.log(res);
+      console.log(data);
     })
     .catch(function (res) {
       //handle error
@@ -116,16 +116,13 @@ if (catSel === 'Todos'){
     </div>
   )
 }
-
-
   return (
 
     <div className='menu'>
         <h1 className='menuTile'>Promociones disponibles</h1>
-        
         <div className="buscar">
       <div id="cont">
-        <button onClick={() => ref.current.focus()}>
+        <button>
           <FiSearch />
         </button>
         <input
@@ -134,29 +131,27 @@ if (catSel === 'Todos'){
           onKeyPress={event => {
                 if (event.key === 'Enter') {
                   console.log("presionaste enter");
-                  this.buscarProductos();
+                  this.respuesta();
+                  <div className="menuList">
+      
+                    {data.map((product) => {
+                return(
+                  <PromoItem 
+                    key = {product.producto_id} 
+                    image = {AlitasMostaza}
+                    name = {product.nombre} 
+                    precio = {product.precio} 
+                    precioDescuento = {product.descuento} />
+                  );
+                    })}
+                </div>
                 }
               }
             }
         />
        </div>
       </div>
-      <div className="menuList">
       
-      {data.map((product) => {
-       return(
-       <PromoItem 
-           key={product.producto_id} 
-          image = {AlitasMostaza}
-          name={product.nombre} 
-           precio={product.precio} 
-          precioDescuento={product.descuento} />
-          );
-        })}
-
-      </div>
-      
-
     <div class="row">
       <div className='leftTexto'>
         <div className='labelTexto'>Buscar por categoria: </div>
