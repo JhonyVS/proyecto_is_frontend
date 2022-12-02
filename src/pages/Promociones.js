@@ -63,7 +63,7 @@ const [active, setActive] = useState(false);/**aaaaa */
 
   console.log(productos)
 
-if (catSel === 'Todos'){
+if (catSel === 'Todos' || catSel == undefined){
   return (
     <div className='menu'>
         <h1 className='menuTile'>Promociones disponibles</h1>
@@ -90,7 +90,7 @@ if (catSel === 'Todos'){
           return(
             <PromoItem 
             key={product.producto_id} 
-            image = {AlitasMostaza}
+            image = {product.imagen}
             name={product.nombre} 
             precio={product.precio} 
             precioDescuento={product.descuento} />
@@ -129,7 +129,7 @@ if (catSel === 'Todos'){
                     return(
                       <PromoItem 
                         key={product.producto_id} 
-                        image = {AlitasMostaza}
+                        image = {product.imagen}
                         name={product.nombre} 
                         precio={product.precio} 
                         precioDescuento={product.descuento} />
@@ -167,7 +167,7 @@ if (catSel === 'Todos'){
           return(
             <PromoItem 
             key={product.producto_id} 
-            image = {AlitasMostaza}
+            image = {product.imagen}
             name={product.nombre} 
             precio={product.precio} 
             precioDescuento={product.descuento} />
