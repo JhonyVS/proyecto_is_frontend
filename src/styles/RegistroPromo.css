@@ -23,6 +23,36 @@
   background: #e5e5e5;
 }
 
+@media only screen and (max-width: 900px) {
+  .contact .leftSide {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /*font-size arreglo el bug del boton iniciar sesion*/
+  .labelPromo{
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .boxImagen1{
+    font-size: 11px;
+  }
+  .categ_opcion{
+    font-size: 11px;
+  }
+  .input_fecha{
+    font-size: 11px;
+  }
+  .input_hora{
+    font-size: 11px;
+  }
+  .mensajeError{
+    font-size: 11px;
+  }
+}
+
 /* .contact .rightSide h1 {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -40,7 +70,7 @@
 .mensajeError{
   font-family: sans-serif;
   color: red;
-  font-size: 15px; 
+  /*font-size: 15px;*/
   padding:0%;
   margin: 0%;
 } 
@@ -67,7 +97,7 @@
 }
 .column15a {
   float: left;
-  width: 17%;
+  width: 18%;
   margin-top: 20px;
   margin-bottom: 0px;
   padding: 0%;
@@ -77,7 +107,7 @@
 .column15b {
   text-align: center;
   float: left;
-  width: 10%;
+  width: 14%;
   padding-bottom: 10px;
   margin-top: 10px;
   margin-bottom: 0px;
@@ -106,7 +136,7 @@
   text-align:right;
   margin-top:15px;
   float: left;
-  width: 25%;
+  width: 24%;
   padding: 1%;
   height: 20px; /* Should be removed. Only for demonstration */
 }
@@ -115,7 +145,7 @@
   text-align:right;
   margin-top:5px;
   float: left;
-  width: 32%;
+  width: 28%;
   padding: 1%;
   height: 20px; /* Should be removed. Only for demonstration */
 }
@@ -132,16 +162,16 @@
   text-align:right;
   margin-left:20px;
   float: left;
-  width: 31%;
-  padding: 1%;
+  width: 28%;
+  padding: 0.5%;
   height: 5px; 
 }
 .column30b {
   text-align:right;
   margin-left:20px;
   float: left;
-  width: 38%;
-  padding: 1%;
+  width: 41%;
+  padding: 0.5%;
   height: 5px; 
 }
 
@@ -211,8 +241,9 @@ line-height: 10%;
 .labelPromo{
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 0.9rem;
-  width:100%;
+  /* font-size: calc(0.6em + 0.5vw); */
+  /*font-size: 14px;*/
+  width: 100%;
   margin-top: 100px;
 }
 
@@ -254,7 +285,7 @@ line-height: 10%;
  .boxImagen1{
   font-family: sans-serif;
   margin-bottom: 0px;
-  font-size: 14px;
+  /*font-size: 14px;*/
   background: #fff;
   border-radius: 1px;
   box-shadow: 0px 0px 0px;
@@ -284,7 +315,7 @@ line-height: 10%;
 
 .categ_opcion{
   font-family: sans-serif;
-  font-size: 0.9rem;
+  /*font-size: 0.9rem;*/
   text-align: center;
   display: flex;
   cursor: pointer;
@@ -305,7 +336,7 @@ line-height: 10%;
 
 .input_fecha{
   text-align: center;
-  font: 0.9em Sans-Serif;
+  font:Sans-Serif;
   cursor: pointer;
   width: 100%;
   height: 28px;
@@ -324,7 +355,7 @@ line-height: 10%;
 
 .input_hora{
   font-family: sans-serif;
-  font-size: 0.9rem;
+  /*font-size: 0.9rem;*/
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -342,7 +373,7 @@ line-height: 10%;
 }
 
 .formulario__btnPromo{
-  height: 45px;
+  height: 240%;
   line-height: 45px;
   width: 50%;
   background: #121619;
