@@ -17,8 +17,12 @@ function Promociones() {
 const[products, setProducts] = useState([])
 const[categorias, setCategorias] = useState([]);
 
-const[productos, setProductos] = useState([])
-
+const[query, setQuery] = useState("");
+const[data , setData] = useState([]);
+const buscar = (event) => {
+  setQuery(event.target.value.toLowerCase());
+}
+console.warn(query)
 
 
 useEffect(() => {
@@ -39,29 +43,40 @@ useEffect(() => {
   }).catch(err => {
     console.log(err)
   }) 
+  var formData = new FormData();
+    formData.append('tipo', 'B');
+    formData.append('contenido', query);
+  const respuesta = axios({
+    method: "post",
+    url: buscarURL,
+    data: formData,
+    headers: { "Content-Type": "multipart/form-data" },
+  })
+    .then(function (res) {
+      //handle success
+      setData(res.data);
+      console.log(res);
+    })
+    .catch(function (res) {
+      //handle error
+      console.log(res);
+    });
 
-  axios
-    .get(buscarURL)
-    .then(res =>{
-    console.log(res.data)
-    setProductos(res.data)
-  }).catch(err => {
-    console.log(err)
-  }) 
+  /** const buscarProductos = async () =>{ 
+    const res = await axios.get(buscarURL);
+    setData(res.data);
+  };*/
 
-},[])
+},[]);
 
 
 const [catSel, setCatSel] = useState();
 const ref = useRef();
-const [active, setActive] = useState(false);/**aaaaa */
 
   console.log(catSel)
 
   console.log(products)
   console.log(categorias)
-
-  console.log(productos)
 
 if (catSel === 'Todos'){
   return (
@@ -104,8 +119,6 @@ if (catSel === 'Todos'){
 
 
   return (
-  
-    
 
     <div className='menu'>
         <h1 className='menuTile'>Promociones disponibles</h1>
@@ -116,32 +129,31 @@ if (catSel === 'Todos'){
           <FiSearch />
         </button>
         <input
-          ref={ref}
           placeholder="buscar"
-          onFocus={() => setActive(true)}
-          onBlur={() => setActive(false)}
-          onChange={event => {this.setState({query: event.target.value})}}
-                onKeyPress={event => {
+          onChange={buscar.bind(this)}
+          onKeyPress={event => {
                 if (event.key === 'Enter') {
-                  <div className="menuList">
-      
-                       {productos.map((product) => {
-                    return(
-                      <PromoItem 
-                        key={product.producto_id} 
-                        image = {AlitasMostaza}
-                        name={product.nombre} 
-                        precio={product.precio} 
-                        precioDescuento={product.descuento} />
-                      );
-                    })}
-
-                  </div>
+                  console.log("presionaste enter");
+                  this.buscarProductos();
                 }
               }
             }
         />
        </div>
+      </div>
+      <div className="menuList">
+      
+      {data.map((product) => {
+       return(
+       <PromoItem 
+           key={product.producto_id} 
+          image = {AlitasMostaza}
+          name={product.nombre} 
+           precio={product.precio} 
+          precioDescuento={product.descuento} />
+          );
+        })}
+
       </div>
       
 
@@ -188,6 +200,8 @@ if (catSel === 'Todos'){
         </div>
     </div>
   )
+
+
     
 
 }
