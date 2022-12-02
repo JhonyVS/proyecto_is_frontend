@@ -194,7 +194,7 @@ const RegistroNegocio = () => {
                         {errors.telefono?.type === 'maxLength' && <span class="mensajeError2">Debe tener un máximo de 8 dígitos</span>}
                     </div>
                     <div class="column30HN2">
-                        {errors.nombreUsuario?.type === 'required' && <span class="mensajeError2">Es necesario el Nombre de usuario</span>}
+                        {errors.nombreUsuario?.type === 'required' && <span class="mensajeError2">Campo obligatorio</span>}
                         {errors.nombreUsuario?.type === 'minLength' && <span class="mensajeError2">Debe tener mas de 8 caracteres</span>}
                         {errors.nombreUsuario?.type === 'maxLength' && <span class="mensajeError2">Debe tener menos de 32 caracteres</span>}
                         {errors.nombreUsuario?.type === 'pattern' && <span class="mensajeError2">Solo admite letras y números.</span>}
@@ -224,11 +224,11 @@ const RegistroNegocio = () => {
                 <div class="row">
                     <div class="column10N"></div>
                     <div class="column30HN">
-                        {errors.contraseña?.type === 'required' && <span class="mensajeError2">Es nesesario la Contraseña</span>}
+                        {errors.contraseña?.type === 'required' && <span class="mensajeError2">Campo obligatorio</span>}
                         {errors.contraseña?.type === 'minLength' && <span class="mensajeError2">Debe tener mas de 8 caracteres</span>}
                     </div>
                     <div class="column30HN2">
-                        {errors.repContraseña?.type === 'required' && <span class="mensajeError2">Las contraseñas no coinciden</span>}
+                        {errors.repContraseña?.type === 'required' && <span class="mensajeError2">No coinciden</span>}
                     </div>
                 </div>        
 

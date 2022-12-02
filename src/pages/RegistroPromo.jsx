@@ -11,7 +11,7 @@ const baseUrl = `${process.env.React_APP_API}/api/registro/producto`;
 const RegistroPromo = () =>{
  const {register, formState:{errors}, handleSubmit} = useForm();
  const history = useNavigate()
-
+ 
  const tiempoTranscurrido = Date.now();
  const today = new Date(tiempoTranscurrido);
  
@@ -25,10 +25,6 @@ const RegistroPromo = () =>{
 
     return formato.replace(/dd|mm|yyyy/gi, matched => map[matched])
 }
-
-
-
-
  const onSubmit = async (data) => {
     let state ={
         form:{
@@ -61,9 +57,9 @@ const RegistroPromo = () =>{
         <div className='rightSide'>
         <h2 class="tituloRegPromo">Registrar Promoción</h2>
         <form id="stripe-login"  onSubmit={handleSubmit(onSubmit)}>
-            <div class="row">
-                <div class="column25">
-                    <label class="labelPromo">Nombre del Producto</label>
+            <div className="row">
+                <div className="column25">
+                    <label className="labelPromo">Nombre del Producto</label>
                 </div>
                 <div class="column60">
                     <input type="text" class="input_form"  {...register('producto_nombre',{
@@ -92,7 +88,7 @@ const RegistroPromo = () =>{
             <div class="row">
 
                 <div class="column30">
-                    <label class="labelPromo">Precio sin Descuento en Bs.</label>
+                    <label className="labelPromo">Precio sin Descuento (Bs).</label>
                 </div>
                 <div class="column15l">
                     <input  type="number" class="input_formPrecio"{...register('precio_original',{
@@ -102,7 +98,7 @@ const RegistroPromo = () =>{
                     })}/>
                 </div>
                 <div class="column30">
-                    <label class="labelPromo">Precio con Descuento en Bs.</label>
+                    <label class="labelPromo">Precio con Descuento (Bs).</label>
                 </div>
                 <div class="column15l">
                     <input type="number" class="input_formPrecio"{...register('precio_descuento',{
@@ -116,12 +112,12 @@ const RegistroPromo = () =>{
             <div class="row">
                 <div class="column15"></div>
                 <div class="column30a">
-                    {errors.precio_original?.type === 'required' && <span class="mensajeError">Se debe insertar el precio</span>}
+                    {errors.precio_original?.type === 'required' && <span class="mensajeError">Campo obligatorio</span>}
                     {errors.precio_original?.type === 'pattern' && <span class="mensajeError">No puede ser menor a 0</span>}
                     {errors.precio_original?.type === 'maxLength' && <span class="mensajeError">No debe ser mayor a 9999 Bs.</span>}
                 </div>
                 <div class="column30b">
-                    {errors.precio_descuento?.type === 'required' && <span class="mensajeError">Se debe insertar el precio</span>}
+                    {errors.precio_descuento?.type === 'required' && <span class="mensajeError">Campo obligatorio</span>}
                     {errors.precio_descuento?.type === 'pattern' && <span class="mensajeError">No puede ser menor a 0</span>}
                     {errors.precio_descuento?.type === 'maxLength' && <span class="mensajeError">No debe ser mayor a 9999 Bs.</span>}
                 </div>
@@ -129,7 +125,7 @@ const RegistroPromo = () =>{
 
             <div class="row">
                 <div class="column25">
-                    <label class="labelPromo">Descripción</label>
+                    <label className="labelPromo">Descripción</label>
                 </div>
                 <div class="column60d">
                     <input type="text" class="input_form" {...register('producto_descripcion', {
@@ -235,10 +231,10 @@ const RegistroPromo = () =>{
             <div class="row">
                 <div class="column10"></div>
                 <div class="column30c">
-                    {errors.promocion_hora_inicio?.type === 'required' && <span class="mensajeError">Ingrese la hora de inicio</span>}
+                    {errors.promocion_hora_inicio?.type === 'required' && <span class="mensajeError">Campo obligatorio</span>}
                 </div>
                 <div class="column30d">
-                    {errors.promocion_hora_fin?.type === 'required' && <span class="mensajeError">Ingrese la hora fin</span>}
+                    {errors.promocion_hora_fin?.type === 'required' && <span class="mensajeError">Campo obligatorio</span>}
                 </div>
             </div>
             <div class="row">
