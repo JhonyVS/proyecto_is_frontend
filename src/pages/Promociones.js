@@ -10,11 +10,15 @@ const baseUrl = `${process.env.React_APP_API}/api/destacados`;
 const catURL = `${process.env.React_APP_API}/api/categorias`;
 
 
+
+
 function Promociones() {
 
 
-const[products, setProducts] = useState([])
+const[products, setProducts] = useState([]);
 const[categorias, setCategorias] = useState([]);
+
+
 
 useEffect(() => {
   axios
@@ -34,6 +38,7 @@ useEffect(() => {
 }).catch(err => {
   console.log(err)
 }) 
+
 },[])
 
 
@@ -45,11 +50,13 @@ const [catSel, setCatSel] = useState();
   console.log(products)
   console.log(categorias)
 
-if (catSel == 'Todos'){
+
+  console.log(catSel)
+
+if (catSel == 'Todos' || catSel == undefined){
   return (
     <div className='menu'>
         <h1 className='menuTile'>Promociones disponibles</h1>
-
     <div class="row">
       <div className='leftTexto'>
         <div className='labelTexto'>Buscar por categoria: </div>
@@ -72,10 +79,11 @@ if (catSel == 'Todos'){
           return(
             <PromoItem 
             key={product.producto_id} 
-            image = {AlitasMostaza}
+            image = {product.imagen}
             name={product.nombre} 
             precio={product.precio} 
             precioDescuento={product.descuento} />
+
           );
         })}
 
@@ -111,47 +119,15 @@ if (catSel == 'Todos'){
           return(
             <PromoItem 
             key={product.producto_id} 
-            image = {AlitasMostaza}
+            image = {product.imagen}
             name={product.nombre} 
             precio={product.precio} 
             precioDescuento={product.descuento} />
           );
         })}
-        
-        {/* {products.map((product) => {
-          return(
-            <PromoItem 
-            key={product.producto_id} 
-            image = {AlitasMostaza}
-            name={product.nombre} 
-            precio={product.precio} 
-            precioDescuento={product.descuento} />
-          );
-        })} */}
-
         </div>
     </div>
   )
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
