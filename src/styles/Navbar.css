@@ -8,7 +8,7 @@
 
 .navbar {
     width: 100%;
-    height: 80px;
+    height: 85px;
     background-color: #E28033;
     display: flex;
     flex-direction: row;
@@ -27,7 +27,7 @@
   }
   
   .navbar .rightSide {
-    flex: 50%;
+    flex: 60%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -79,10 +79,11 @@
 .logo{
   cursor: pointer;
 }
-
+/*el width*/
   @media only screen and (max-width: 900px) {
+    .navbar{min-width: 44.8vh;}
     .navbar .rightSide a {
-      width: 70px;
+      width: 100%;
     }
     .navbar .leftSide {
       padding-left: 50px;
@@ -90,8 +91,10 @@
   }
   
   @media only screen and (max-width: 600px) {
+    .navbar{min-width: 44.8vh;}
     .navbar .rightSide a {
       display: none;
+      font-size: 12px;
     }
   
     .navbar .rightSide {
@@ -105,11 +108,25 @@
   }
   
   @media only screen and (min-width: 600px) {
+    
     .navbar .rightSide button {
       display: none;
     }
-  
     .hiddenLinks {
       display: none;
+    }
+  }
+  @media only screen and (max-width: 280px) {
+    .navbar{width: 100%;}
+    .navbar .rightSide {
+      width: 5%;
+      margin-left: 0;
+      margin-right: -50px;
+    }
+    .navbar .rightSide a {
+      font-size: 10px;
+    }
+    .navbar .leftSide {
+      padding-left: 10px;
     }
   }
