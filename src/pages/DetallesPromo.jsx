@@ -8,7 +8,7 @@ import { useEffect  , useState} from 'react'
 
 
 function DetallesPromo(idPromo) {
-    
+    console.log(idPromo)
     const baseUrl = `${process.env.React_APP_API}/api/producto/${idPromo}`
     
     const [productos, setProductos]= useState([]);
