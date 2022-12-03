@@ -1,18 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import DetallesPromo from '../pages/DetallesPromo'
 
-function PromoItem({ image, name, precio, precioDescuento}) {
-  const nombre=name
-  console.log(nombre)
+function PromoItem({id, image, name, precio, precioDescuento}) {
+
+  console.log(id)
+  const idDet=id
   return (
-    <Link to="/detallesPromocion" className="menuItem">
-      <div style={{ backgroundImage: `url(${image})`}}></div>
-      <h1>{name}</h1>
-      <p> Precio sin descuento: {precio} Bs. </p>
-      <p> Precio con descuento: {precioDescuento} Bs.  </p>
-      
-    </Link>
-    
+    <a href='detallesPromocion'><DetallesPromo idPromo={idDet} />
+      <button className="menuItem" >
+        
+        <div style={{ backgroundImage: `url(${image})`}}></div>
+        <h1>{name}</h1>
+        <p> Precio sin descuento: {precio} Bs. </p>
+        <p> Precio con descuento: {precioDescuento} Bs.  </p>
+        <p>ID: {id}</p>
+        
+      </button>
+      </a>
   )
 }
 

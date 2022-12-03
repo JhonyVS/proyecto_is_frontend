@@ -89,7 +89,7 @@ if (catSel === 'Todos'){
         {products.map((product) => {
           return(
             <PromoItem 
-            key={product.producto_id} 
+            id={product.id} 
             image = {AlitasMostaza}
             name={product.nombre} 
             precio={product.precio} 
@@ -128,7 +128,7 @@ if (catSel === 'Todos'){
                        {productos.map((product) => {
                     return(
                       <PromoItem 
-                        key={product.producto_id} 
+                        id={product.id} 
                         image = {AlitasMostaza}
                         name={product.nombre} 
                         precio={product.precio} 
@@ -166,7 +166,7 @@ if (catSel === 'Todos'){
         {products.filter(prod => prod.categoria === catSel).map((product) => {
           return(
             <PromoItem 
-            key={product.producto_id} 
+            id={product.id} 
             image = {AlitasMostaza}
             name={product.nombre} 
             precio={product.precio} 
