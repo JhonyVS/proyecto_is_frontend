@@ -7,13 +7,9 @@ import { useEffect  , useState} from 'react'
 
 
 
-const id=1
-
-const baseUrl = `${process.env.React_APP_API}/api/producto/${id}`
-
-
 function DetallesPromo() {
-    
+    const idPromo=1
+    const baseUrl = `${process.env.React_APP_API}/api/producto/${idPromo}`
     
     const [productos, setProductos]= useState([]);
     const obtenerDetProducto = async()=>{
