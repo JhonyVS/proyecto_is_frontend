@@ -22,7 +22,7 @@ let targeta = 'Desayuno';
 
     return formato.replace(/dd|mm|yyyy/gi, matched => map[matched])
 }
-    
+   
 function RegistroPromo() {
     
      useEffect(() => {
@@ -231,10 +231,10 @@ function RegistroPromo() {
             <div class="row">
                 <div class="column10"></div>
                 <div class="column30c">
-                    {errors.promocion_fecha_inicio?.type === 'required' && <span class="mensajeError">Ingrese una fecha</span>}
+                    {errors.promocion_fecha_inicio?.type === 'required' && <span class="mensajeError">Campo obligatorio</span>}
                 </div>
                 <div class="column30d">
-                    {errors.promocion_fecha_fin?.type === 'required' && <span class="mensajeError">Ingrese una fecha</span>}
+                    {errors.promocion_fecha_fin?.type === 'required' && <span class="mensajeError">Campo obligatorio</span>}
                 </div>
             </div>
 
