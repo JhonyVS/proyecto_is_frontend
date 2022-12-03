@@ -90,7 +90,7 @@ componentDidMount(){
   
           <div className='rightSide_l'>
           <React.Fragment>
-          <div className="wrapper ">
+          <div className="wrapperini">
               <div id="formContent">
                 
                 <div >
