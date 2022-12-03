@@ -104,7 +104,7 @@ componentDidMount(){
                 <form onSubmit={this.manejadorSubmit} >
                   {/* <input type="text" className="texto" name="nick" placeholder="Usuario" onChange={this.menejadorChange}/>
                   <input type="password"  name="password" placeholder="Password"onChange={this.menejadorChange}/> */}
-                  <input type="text" className="texto" name="nick" placeholder="Usuario"onChange={this.handleChange} />
+                  <input type="text" className="textoI" name="nick" placeholder="Usuario"onChange={this.handleChange} />
                   <input type="password"  name="password" placeholder="Password"onChange={this.handleChange}/>
                  
                   {/* <button type="submit" className='btn'onClick={this.manejadorBoton} >Iniciar Sesión</button> */}

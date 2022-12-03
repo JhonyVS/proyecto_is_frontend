@@ -208,7 +208,7 @@
   }
   
   
-  .texto {
+  .textoI {
     background-color: #f6f6f6;
     border: none;
     color: #0d0d0d;
@@ -232,12 +232,12 @@
     animation-delay: 0.6s;
   }
   
-  .texto :focus {
+  .textoI :focus {
     background-color: #fff;
     border-bottom: 2px solid #5fbae9;
   }
   
-  .texto :placeholder {
+  .textoI :placeholder {
     color: #cccccc;
   }
   

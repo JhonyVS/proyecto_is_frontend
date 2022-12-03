@@ -7,7 +7,9 @@ import Footer from './components/Footer';
 import Promociones from './pages/Promociones';
 import RegistroNegocio from './pages/RegistroNegocio';
 import RegistroPromo from './pages/RegistroPromo';
+import DetallesPromo from './pages/DetallesPromo';
 
+import Login from './pages/Login';
 
 function App() {
 
@@ -17,16 +19,15 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Home/>} />
+          <Route exact path='/ini' element={<Login/>} />
           <Route exact path='/promociones' element={<Promociones/>} />
-
           <Route exact path='/registrarNegocio' element={<RegistroNegocio/>} />
-
           <Route exact path='/registrarPromocion' element={<RegistroPromo/>} />
+          <Route exact path='/detallesPromocion' element={<DetallesPromo/>} />
         </Routes>
         <Footer/>
       </Router>
     </div>
   );
 }
-
 export default App;
