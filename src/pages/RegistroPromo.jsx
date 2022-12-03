@@ -4,12 +4,10 @@ import { useForm } from 'react-hook-form';
 import {useNavigate} from 'react-router-dom'
 import '../styles/RegistroPromo.css'
 import axios from 'axios';
-
-const baseUrl = `${process.env.React_APP_API}/api/registro/producto`;
-
-const RegistroPromo = () =>{
- const {register, formState:{errors}, handleSubmit} = useForm();
- const history = useNavigate()
+import Cookies from 'universal-cookie';
+import { useEffect } from 'react';
+const baseUrl = `${process.env.React_APP_API}/api/registro/producto`;   
+let targeta = 'Desayuno';
  
  const tiempoTranscurrido = Date.now();
  const today = new Date(tiempoTranscurrido);
@@ -24,28 +22,57 @@ const RegistroPromo = () =>{
 
     return formato.replace(/dd|mm|yyyy/gi, matched => map[matched])
 }
- const onSubmit = async (data) => {
-    let state ={
-        form:{
-            "producto_nombre" : data.producto_nombre,
-            "producto_precio" : data.precio_original,
-            "promocion_descuento" : data.precio_descuento,
+    
+function RegistroPromo() {
+    
+     useEffect(() => {
+        if(cookies.get('token')){
+            let aux = document.getElementById("cerrarsesion")
+            let pos = document.getElementById("iniciarsesion")
+            let aux2 = document.getElementById("cerrarsesion2")
+            let pos2 = document.getElementById("iniciarsesion2")
+            aux.style.display="flex";
+            aux2.style.display="flex";
+            pos.style.display="none" ;
+            pos2.style.display="none";
+        }}); 
+    
+    
+    const cookies = new Cookies();
+    const {register, formState:{errors}, handleSubmit} = useForm();
+    const history = useNavigate()
+    const selectProduct=(event)=>{
+        targeta = event.target.value;
+    };
+    const onSubmit = async (data) => {
+         let state ={form:{
             "producto_descripcion" : data.producto_descripcion,
-            "photo" : data.imagen_producto[0],
-            "producto_categoria" : data.categ_option, 
+            "producto_nombre" : data.producto_nombre,
+            "producto_categoria" : targeta,
+            "promocion_descuento" : data.precio_descuento,
             "promocion_fecha_inicio" : data.promocion_fecha_inicio,
-            "promocion_fecha_fin" : data.promocion_fecha_fin,
+            "promocion_fecha_fin" : data.promocion_fecha_fin, 
             "promocion_hora_inicio" : data.promocion_hora_inicio,
             "promocion_hora_fin" : data.promocion_hora_fin,
-        }
-    } 
-    console.log(state.form)
-        await axios.post(baseUrl, state.form, {
-            headers: {
-              'Content-Type': 'multipart/form-data'
+            "negocio_id" : cookies.get('negocio'),
+            "producto_precio" : data.precio_original,
+            "photo" : data.imagen_producto[0],
+            }}
+            let config={
+                headers:{
+                    'Content-Type': 'multipart/form-data',
+                    'Authorization': `Bearer ${cookies.get('token')}`
+                }
             }
-        }); 
- }   
+        console.log(state.form)
+        await axios.post(baseUrl, state.form, config)  
+        .then(response=>{
+            if(response.status === 200){
+                alert('Se registro correctamente');
+                window.location.href="/"; 
+            }
+        })
+    }
     
             
     return <div className='contact'>
@@ -171,11 +198,13 @@ const RegistroPromo = () =>{
                     <label class="labelPromo">Categoría</label>
                 </div>
                 <div class="column60">
-                    <select class="categ_opcion" {...register('categ_option')}>
-                        <option value='comida rapida'>Comida Rápida</option>
-                        <option value='bebida'>Bebida</option>
-                        <option value='postre'>Postre</option>
-                        <option value='carne asada'>Carne Asada</option>
+                <select class="categ_opcion" onChange={selectProduct}>
+                        <option value='Desayuno'>Desayuno</option>
+                        <option value='Hamburguesa'>Hamburguesa</option>
+                        <option value='Parrilla'>Parrilla</option>
+                        <option value='Pizza'>Pizza</option>
+                        <option value='Pollo'>Pollo</option>
+                        <option value='Postre'>Postre</option>
                         <option value='otro'>Otros</option>
                     </select>
                 </div>
