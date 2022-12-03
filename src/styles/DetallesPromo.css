@@ -49,8 +49,8 @@
   margin-right:0px;
   float: left;
   width: 38%;
-  padding-top: 1%;
-  height: 20px; 
+  padding-top: 0%;
+  height: 30px; 
 }
 
 .columnVer1 {
@@ -59,8 +59,8 @@
   float: left;
   width: 38%;
   padding: 0%;
-  height: 30px; 
-  padding-top: 1%;
+  height: 45px; 
+  padding-top: 0%;
 }
 
 .columnUbi {
@@ -69,19 +69,13 @@
   float: left;
   width: 38%;
   padding: 0%;
-  height: 20px; 
-  padding-top: 1%;
+  height: 30px; 
+  padding-top: 0%;
 }
 
 @media only screen and (max-width: 1050px) {
   .columnVer1{
-    height: 50px; 
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .columnVer1{
-    height: 30px; 
+    height: 60px; 
   }
 }
 
@@ -96,33 +90,57 @@
     height: 70%;
     justify-content: stretch;
   }
-}
-
-@media only screen and (max-width: 900px) {
   .columnVer1{
-    height: 30px; 
+    height: 19px; 
   }
-}
-
-@media only screen and (max-width: 600px) {
-  .columnVer1{
-    height: 50px; 
-  }
-}
-
-@media only screen and (max-width: 668px) {
-  .contactVer .rightSide1 {
-    height: 86%;
-    justify-content: stretch;
+  .columnVer{
+    height: 19px; 
   }
   .columnUbi{
-    height: 35px;
+    height: 19px; 
   }
+}
+
+
+@media only screen and (max-width: 940px) {
+  .columnVer1{
+    height: 35px; 
+  }
+  .contactVer .rightSide1 {
+    height: 52%;
+    justify-content: stretch;
+  }
+  .contactVer .leftSide1 {
+    height: 48%;
+  }
+}
+
+.labelDetPromo{
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  width:100%;
+  margin-top: 100px;
 }
 
 @media only screen and (max-width: 499px) {
+  .columnUbi{
+    height: 34px;
+  }
+  .columnVer1{
+    height: 50px;
+  }
   .contactVer .rightSide1 {
-    height: 92%;
+    height: 64%;
+  }
+  .contactVer .leftSide1 {
+    height: 36%;
+  }
+  .tituloDetPromo{
+    font-size: 23px;
+  }
+  .labelDetPromo{
+    font-size: 0.74rem;
   }
 }
   
@@ -137,7 +155,6 @@
   font-family: sans-serif;
 }
 
-
 .datosDet{
   display:flex;
   color: #863B00;
@@ -146,23 +163,5 @@
   font-weight: normal;
   font-size: 0.9rem;
   width:100%;
-  margin-top: 5px;
-}
-  
-.labelDetPromo{
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 0.9rem;
-  width:100%;
-  margin-top: 100px;
-}
-
-@media only screen and (max-width: 668px) {
-  .columnVer{
-    height: 35px; 
-  }
-  .datosDet{
-    margin-top: 5px;
-  }
-  
+  margin-top: 1px;
 }
