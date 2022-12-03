@@ -9,7 +9,7 @@ import { FiSearch } from "react-icons/fi";
 
 const baseUrl = `${process.env.React_APP_API}/api/destacados`;
 const catURL = `${process.env.React_APP_API}/api/categorias`;
-const buscarURL = `${process.env.React_APP_API}/api/producto/filtro`;
+//const buscarURL = `${process.env.React_APP_API}/api/producto/filtro`;
 
 
 function Promociones() {
@@ -17,13 +17,20 @@ function Promociones() {
 const[products, setProducts] = useState([])
 const[categorias, setCategorias] = useState([]);
 
+// buscador
+const[resultados, setResultados] = useState([])
 const[query, setQuery] = useState("");
-const[data , setData] = useState([]);
 const buscar = (event) => {
   setQuery(event.target.value.toLowerCase());
 }
 console.warn(query)
-
+function llenar(event){
+  if (event.key === 'Enter' && query.length>2){
+    setResultados(()=>{return products.filter((dato)=> dato.nombre.toLowerCase().includes(query.toLocaleLowerCase()))});
+    console.log("**** presionaste enter *****");
+  }
+}
+// f buscador
 
 useEffect(() => {
   axios
@@ -43,35 +50,12 @@ useEffect(() => {
   }).catch(err => {
     console.log(err)
   }) 
-  var formData = new FormData();
-    formData.append('tipo', 'B');
-    formData.append('contenido', query);
-  const respuesta = axios({
-    method: "post",
-    url: buscarURL,
-    data: formData,
-    headers: { "Content-Type": "multipart/form-data" },
-  })
-    .then(function (res) {
-      //handle success
-      setData(res.data);
-      console.log(data);
-    })
-    .catch(function (res) {
-      //handle error
-      console.log(res);
-    });
-
-  /** const buscarProductos = async () =>{ 
-    const res = await axios.get(buscarURL);
-    setData(res.data);
-  };*/
 
 },[]);
 
 
+
 const [catSel, setCatSel] = useState();
-const ref = useRef();
 
   console.log(catSel)
 
@@ -121,36 +105,30 @@ if (catSel === 'Todos'){
     <div className='menu'>
         <h1 className='menuTile'>Promociones disponibles</h1>
         <div className="buscar">
-      <div id="cont">
-        <button>
-          <FiSearch />
-        </button>
-        <input
+         <div id="cont">
+          <button>
+            <FiSearch />
+          </button>
+          <input
           placeholder="buscar"
           onChange={buscar.bind(this)}
-          onKeyPress={event => {
-                if (event.key === 'Enter') {
-                  console.log("presionaste enter");
-                  this.respuesta();
-                  <div className="menuList">
-      
-                    {data.map((product) => {
-                return(
-                  <PromoItem 
+          onKeyDown={llenar}
+          />    
+          <div className="menuList">
+                {resultados.map((product) => {
+            return(
+                <PromoItem 
                     key = {product.producto_id} 
                     image = {AlitasMostaza}
                     name = {product.nombre} 
                     precio = {product.precio} 
                     precioDescuento = {product.descuento} />
-                  );
-                    })}
-                </div>
-                }
-              }
-            }
-        />
-       </div>
-      </div>
+                 );
+                   })}
+             </div>
+        
+        </div>
+        </div>
       
     <div class="row">
       <div className='leftTexto'>
