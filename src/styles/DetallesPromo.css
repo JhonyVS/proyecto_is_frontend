@@ -1,0 +1,168 @@
+.contactVer {
+  width: 100%;
+  height: 79vh;
+  display:flex;
+}
+  
+
+  
+.contactVer .leftSide1 {
+  height: 100%;
+  flex: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+  
+.contactVer .rightSide1 {
+  padding-left: 5%;
+  padding-right: 3%;
+  height: 100%;
+  flex: 50%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #e5e5e5;
+} 
+
+
+.tituloDetPromo{
+  color: #000000;
+  top: 0;
+  height:1px; 
+  text-align:center;
+}
+  
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row2 {
+  display: table;
+}
+
+.columnVer {
+  text-align:left;
+  margin-right:0px;
+  float: left;
+  width: 38%;
+  padding-top: 1%;
+  height: 20px; 
+}
+
+.columnVer1 {
+  text-align:left;
+  margin-right:0px;
+  float: left;
+  width: 38%;
+  padding: 0%;
+  height: 30px; 
+  padding-top: 1%;
+}
+
+.columnUbi {
+  text-align:left;
+  margin-right:0px;
+  float: left;
+  width: 38%;
+  padding: 0%;
+  height: 20px; 
+  padding-top: 1%;
+}
+
+@media only screen and (max-width: 1050px) {
+  .columnVer1{
+    height: 50px; 
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .columnVer1{
+    height: 30px; 
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .contactVer{
+      display: inline-block;
+  }
+  .contactVer .leftSide1 {
+    height: 50%;
+  }
+  .contactVer .rightSide1 {
+    height: 70%;
+    justify-content: stretch;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .columnVer1{
+    height: 30px; 
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .columnVer1{
+    height: 50px; 
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .contactVer .rightSide1 {
+    height: 86%;
+    justify-content: stretch;
+  }
+  .columnUbi{
+    height: 35px;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  .contactVer .rightSide1 {
+    height: 92%;
+  }
+}
+  
+.btnDetPromo{
+  background: #000000;
+  color: #fff;
+  width: 100%;
+  height: min-content;
+  font-size: 15px;
+  border-radius: 15px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+
+.datosDet{
+  display:flex;
+  color: #863B00;
+  height: 0px;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 0.9rem;
+  width:100%;
+  margin-top: 5px;
+}
+  
+.labelDetPromo{
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  width:100%;
+  margin-top: 100px;
+}
+
+@media only screen and (max-width: 668px) {
+  .columnVer{
+    height: 35px; 
+  }
+  .datosDet{
+    margin-top: 5px;
+  }
+  
+}
