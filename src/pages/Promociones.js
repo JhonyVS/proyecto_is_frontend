@@ -45,31 +45,74 @@ const [catSel, setCatSel] = useState();
   console.log(categorias)
 
 
+
+if (catSel == 'Todos' || catSel == undefined){
   return (
     <div className='menu'>
         <h1 className='menuTile'>Promociones disponibles</h1>
-      
-      <div class="row">
-        <div className='texto'>
-          <label className='labelTexto'>Buscar por categoría:</label>
-        </div>
-        <div className='selectBox'>
-          <select className='categ_option' onChange={e=>setCatSel(e.target.value)}>
-            <option>Seleccione una opción</option>
-              {categorias.map((cats) => (
-                  <option key={cats.categoria} value={cats.categoria}>
-                    {cats.categoria}
-                  </option>
-              ))}
-          </select>
-        </div>
+    <div class="row">
+      <div className='leftTexto'>
+        <div className='labelTexto'>Buscar por categoria: </div>
       </div>
+      <div className='rightSelectBox'>
+        <select className='categ_option'  onChange={e=>setCatSel(e.target.value)} >
+          <option>Todos</option>
+            {categorias.map((cats) => (
+                <option key={cats.categoria} value={cats.categoria}>
+                  {cats.categoria}
+                </option>
+            ))}
+        </select>
+      </div>
+    </div>
+
         <div className="menuList">
+      
+        {products.map((product) => {
+          return(
+            <PromoItem 
+            key={product.producto_id} 
+            image = {product.imagen}
+            name={product.nombre} 
+            precio={product.precio} 
+            precioDescuento={product.descuento} />
+
+          );
+        })}
+
+        </div>
+    </div>
+  )
+}
+
+
+  return (
+    <div className='menu'>
+        <h1 className='menuTile'>Promociones disponibles</h1>
+
+    <div class="row">
+      <div className='leftTexto'>
+        <div className='labelTexto'>Buscar por categoria: </div>
+      </div>
+      <div className='rightSelectBox'>
+        <select className='categ_option'  onChange={e=>setCatSel(e.target.value)} >
+          <option>Todos</option>
+            {categorias.map((cats) => (
+                <option key={cats.categoria} value={cats.categoria}>
+                  {cats.categoria}
+                </option>
+            ))}
+        </select>
+      </div>
+    </div>
+
+        <div className="menuList">
+
         {products.filter(prod => prod.categoria === catSel).map((product) => {
           return(
             <PromoItem 
             key={product.producto_id} 
-            image = {AlitasMostaza}
+            image = {product.imagen}
             name={product.nombre} 
             precio={product.precio} 
             precioDescuento={product.descuento} />
@@ -78,7 +121,8 @@ const [catSel, setCatSel] = useState();
         </div>
     </div>
   )
-    
+
+
 }
 
 export default Promociones
