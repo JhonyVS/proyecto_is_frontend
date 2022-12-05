@@ -2,6 +2,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
+    
   }
 .titulo {
   text-align: center;
@@ -12,8 +13,8 @@
     font-size: 60px;
   }
   
-  .menuList {
-    width: 70vw;
+.menuList {
+    width: 100%;
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

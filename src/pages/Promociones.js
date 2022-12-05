@@ -64,12 +64,24 @@ useEffect(() => {
   console.log(categorias)
   console.log(prods)
 
-if (catSel === 'Todos'){
+if (catSel === 'Todos' || catSel === undefined){
   return (
     <div className='menu'>
       <div className='titulo'>
         <h1 className='menuTitle'>Promociones disponibles</h1>
       </div>
+      <div className="buscar">
+         <div id="cont">
+          <button>
+            <FiSearch />
+          </button>
+          <input
+          placeholder="buscar"
+          onChange={buscar.bind(this)}
+          onKeyDown={llenar}
+          />
+          </div>
+        </div>
     <div class="row">
       <div className='leftTexto'>
         <div className='labelTexto'>Buscar por categoria: </div>
@@ -85,7 +97,7 @@ if (catSel === 'Todos'){
         </select>
       </div>
     </div>
-
+  
       <div className="menuList">
         
         {prods.map((product) => {
@@ -98,9 +110,8 @@ if (catSel === 'Todos'){
             precioDescuento={product.descuento} />
           );
         })}
-
-        </div>
-    </div>
+      </div>
+      </div>
   )
 }
   return (
@@ -120,8 +131,6 @@ if (catSel === 'Todos'){
           onKeyDown={llenar}
           />
           </div>
-        
-        
         </div>
       
     <div class="row">
