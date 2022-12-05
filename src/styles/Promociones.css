@@ -1,12 +1,13 @@
 .menu {
-    width: 100%;
     height: auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
   }
-  .menu .menuTitle {
+.titulo {
+  text-align: center;
+}
+.menuTitle {
+    
     font-family: cursive;
     font-size: 60px;
   }
@@ -25,6 +26,7 @@
     width: 300px;
     height: 430px;
     margin: 20px;
+    text-align: left;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   }
   .menuItem:hover {
@@ -93,7 +95,7 @@
 
 .row {
   display: flex;
-  background: rgb(255, 255, 255);
+  justify-content: center;
 
 }
 

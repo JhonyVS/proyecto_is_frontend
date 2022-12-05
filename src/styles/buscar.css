@@ -1,12 +1,11 @@
 .buscar {
     font-family: 'Inter', sans-serif;
     text-align: right;
-    margin-right: 10%;
-    margin-bottom: 25px;
-    width: 100%;
+    margin-bottom: 35px;
   }
   
   #cont {
+    margin-right: 35px;
     display: inline-flex;
     background: white;
     height: 50px;
