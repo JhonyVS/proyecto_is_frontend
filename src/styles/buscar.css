@@ -1,0 +1,29 @@
+.buscar {
+  font-family: 'Inter', sans-serif;
+  text-align: right;
+  margin-bottom: 35px;
+}
+
+#cont {
+  margin-right: 35px;
+  display: inline-flex;
+  background: white;
+  height: 50px;
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.08);
+  background-color: lightgray;
+}
+
+#cont button,
+#cont input {
+  text-align: right;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 10px;
+  background: transparent;
+  border: none;
+  /* outline: none; */
+}
+#cont button {
+  width: 40px;
+  color: black;
+}

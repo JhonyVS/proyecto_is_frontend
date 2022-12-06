@@ -94,6 +94,7 @@
     .navbar{min-width: 44.8vh;}
     .navbar .rightSide a {
       display: none;
+      font-size: 12px;
     }
   
     .navbar .rightSide {
@@ -111,8 +112,21 @@
     .navbar .rightSide button {
       display: none;
     }
-  
     .hiddenLinks {
       display: none;
+    }
+  }
+  @media only screen and (max-width: 280px) {
+    .navbar{width: 100%;}
+    .navbar .rightSide {
+      width: 5%;
+      margin-left: 0;
+      margin-right: -50px;
+    }
+    .navbar .rightSide a {
+      font-size: 10px;
+    }
+    .navbar .leftSide {
+      padding-left: 10px;
     }
   }

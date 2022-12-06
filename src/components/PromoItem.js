@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function PromoItem({ image, name, precio, precioDescuento}) {
+  const imgURL = `${process.env.React_APP_API}/api/images/${image}`;
   const nombre=name
   console.log(nombre)
   return (

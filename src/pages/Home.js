@@ -1,6 +1,7 @@
 // import { Grid } from '@mui/material';
+
+import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-import React from 'react'
 // import {Link} from 'react-router-dom'
 import '../styles/Home.css';
 import { useEffect } from 'react';

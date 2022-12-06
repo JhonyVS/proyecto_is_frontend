@@ -1,21 +1,21 @@
-.contact {
+.contactVer {
   width: 100%;
-  height: 79vh;
+  height: 84.5vh;
   display:flex;
 }
   
 
   
-.contact .leftSide {
+.contactVer .leftSide1 {
   height: 100%;
-  flex: 50%;
+  flex: 60%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
 }
   
-.contact .rightSide {
+.contactVer .rightSide1 {
   padding-left: 5%;
   padding-right: 3%;
   height: 100%;
@@ -28,94 +28,94 @@
 
 
 .tituloDetPromo{
-  color: #863B00;
+  color: #000000;
   top: 0;
   height:1px; 
   text-align:center;
 }
   
-.row:after {
+.row1:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.row1 {
+.row2 {
   display: table;
 }
 
-.column25 {
+.columnVer {
   text-align:left;
   margin-right:0px;
   float: left;
   width: 38%;
   padding-top: 0%;
-  height: 20px; 
+  height: 30px; 
 }
 
-.column26 {
+.columnVer1 {
   text-align:left;
   margin-right:0px;
   float: left;
   width: 38%;
-  padding: 1%;
-  height: 32px; 
+  padding: 0%;
+  height: 45px; 
+  padding-top: 0%;
 }
+
+.columnUbi {
+  text-align:left;
+  margin-right:0px;
+  float: left;
+  width: 38%;
+  padding: 0%;
+  height: 30px; 
+  padding-top: 0%;
+}
+
 @media only screen and (max-width: 1050px) {
-  .column26{
-    height: 50px; 
+  .columnVer1{
+    height: 60px; 
   }
 }
 
-@media only screen and (max-width: 900px) {
-  .contact{
+@media only screen and (max-width: 1000px) {
+  .contactVer{
       display: inline-block;
   }
-  .column26{
-    height: 30px; 
-  }
-  .contact .leftSide {
+  .contactVer .leftSide1 {
     height: 50%;
   }
-  .contact .rightSide {
+  .contactVer .rightSide1 {
     height: 70%;
     justify-content: stretch;
   }
-}
-
-@media only screen and (max-width: 600px) {
-  .column26{
-    height: 50px; 
+  .columnVer1{
+    height: 19px; 
   }
-
-}
-
-  
-.btnDetPromo{
-  background: #121619;
-  color: #fff;
-  width: 100%;
-  height: min-content;
-  font-size: 15px;
-  border-radius: 7px;
-  text-align: center;
+  .columnVer{
+    height: 19px; 
+  }
+  .columnUbi{
+    height: 19px; 
+  }
 }
 
 
-
-
-.datos{
-  display:flex;
-  color: #863B00;
-  height: 0px;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 0.9rem;
-  width:100%;
-  margin-top: 5px;
+@media only screen and (max-width: 940px) {
+  .columnVer1{
+    height: 35px; 
+  }
+  .contactVer .rightSide1 {
+    height: 52%;
+    justify-content: stretch;
+  }
+  .contactVer .leftSide1 {
+    height: 48%;
+  }
 }
-  
-.labelPromo{
+
+.labelDetPromo{
   font-family: sans-serif;
   font-weight: bold;
   font-size: 0.9rem;
@@ -123,3 +123,45 @@
   margin-top: 100px;
 }
 
+@media only screen and (max-width: 499px) {
+  .columnUbi{
+    height: 34px;
+  }
+  .columnVer1{
+    height: 50px;
+  }
+  .contactVer .rightSide1 {
+    height: 64%;
+  }
+  .contactVer .leftSide1 {
+    height: 36%;
+  }
+  .tituloDetPromo{
+    font-size: 23px;
+  }
+  .labelDetPromo{
+    font-size: 0.74rem;
+  }
+}
+  
+.btnDetPromo{
+  background: #000000;
+  color: #fff;
+  width: 100%;
+  height: min-content;
+  font-size: 15px;
+  border-radius: 15px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.datosDet{
+  display:flex;
+  color: #863B00;
+  height: 0px;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 0.9rem;
+  width:100%;
+  margin-top: 1px;
+}

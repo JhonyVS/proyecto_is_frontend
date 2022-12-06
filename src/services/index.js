@@ -1,4 +1,19 @@
-import axios from 'axios';
+import axios from 'axios'
+
+const base =process.env.React_APP_API
+
+export async function getDetProducto () {
+    try {
+        const respuesta = await axios({
+            url: `${base}/api/producto/${id}`,
+            method: 'GET'
+        })
+        return respuesta
+    }catch (error){
+        console.log(error)
+    }
+}
+
 
 const baseUrl = '${process.env.React_APP_API}';
 const API = 'http://localhost:8000/api/producto/1`'
