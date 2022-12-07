@@ -7,7 +7,7 @@ function PromoItem({ image, name, precio, precioDescuento}) {
   console.log(nombre)
   return (
     <Link to="/detallesPromocion" className="menuItem">
-      <div style={{ backgroundImage: `url(${image})`}}></div>
+      <div style={{ backgroundImage: `url(${imgURL})`}}></div>
       <h1>{name}</h1>
       <p> Precio sin descuento: {precio} Bs. </p>
       <p> Precio con descuento: {precioDescuento} Bs.  </p>
