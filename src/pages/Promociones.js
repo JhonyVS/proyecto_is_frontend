@@ -54,7 +54,9 @@ const [catSel, setCatSel] = useState();
 if (catSel == 'Todos' || catSel == undefined){
   return (
     <div className='menu'>
-        <h1 className='menuTile'>Promociones disponibles</h1>
+        <div className='titulo'>
+        <h1 className='menuTitle'>Promociones disponibles</h1>
+        </div>
     <div class="row">
       <div className='leftTexto'>
         <div className='labelTexto'>Buscar por categoria: </div>
@@ -93,8 +95,9 @@ if (catSel == 'Todos' || catSel == undefined){
 
   return (
     <div className='menu'>
-        <h1 className='menuTile'>Promociones disponibles</h1>
-
+      <div className='titulo'>
+        <h1 className='menuTitle'>Promociones disponibles</h1>
+        </div>
     <div class="row">
       <div className='leftTexto'>
         <div className='labelTexto'>Buscar por categoria: </div>
